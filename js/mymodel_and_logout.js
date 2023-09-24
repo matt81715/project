@@ -10,7 +10,7 @@ $(function () {
     // uid 存在,傳遞至後端 check_uid_api.php確認是否合法
     $.ajax({
       type: "POST",
-      url: api_link + "./api/check_uid_api.php",
+      url: api_link + "api/check_uid_api.php",
       dataType: "json",
       data: { uid: getCookie("uid01") },
       success: showdata_check_uid,
@@ -28,7 +28,7 @@ $(function () {
       // // 傳遞帳號至後端api確認是否可以使用
       $.ajax({
         type: "POST",
-        url: api_link + "./api/member/reg_check_uni_api.php",
+        url: api_link + "api/member/reg_check_uni_api.php",
         data: { username: $("#username").val() },
         dataType: "json",
         success: showdata_check_uni,
@@ -115,7 +115,7 @@ $(function () {
     if (flag_username && flag_password) {
       $.ajax({
         type: "POST",
-        url: api_link + "./api/member/reg_api.php",
+        url: api_link + "api/member/reg_api.php",
         data: {
           username: $("#username").val(),
           password: $("#password").val(),
@@ -140,7 +140,7 @@ $(function () {
     // 傳遞至 login_api.php 執行登入行為
     $.ajax({
       type: "POST",
-      url: api_link + "./api/member/login_api.php",
+      url: api_link + "api/member/login_api.php",
       data: {
         username: $("#login_username").val(),
         password: $("#login_password").val(),
