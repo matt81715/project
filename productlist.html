@@ -543,6 +543,7 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://unpkg.com/counterup2@2.0.2/dist/index.js">	</script>
     <script src="js/wow.min.js"></script>
+    <script src="js/api_link.js"></script>
     <!-- mymodel -->
     <script src="js/mymodel_and_logout.js"></script>
     <script>
@@ -553,7 +554,7 @@
             $.ajax(
                 {
                     type: "POST",
-                    url: "api/product/product_read_mem_api.php",
+                    url: api_link + "api/product/product_read_mem_api.php",
                     //dataType抓資料
                     data: {
                         list: getCookie('list'),
@@ -648,7 +649,7 @@
                     var p_photo = $(this).data("photo");
                     $.ajax({
                         type: "post",
-                        url: "api/car/car_c_api.php",
+                        url: api_link + "api/car/car_c_api.php",
                         data: {
                             title: p_title,
                             price: p_price,

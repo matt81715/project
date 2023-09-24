@@ -358,6 +358,7 @@
     <!--  有vue(下方)存在,jquery可以就捨去掉 -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://unpkg.com/counterup2@2.0.2/dist/index.js">	</script>
+    <script src="js/api_link.js"></script>
     <script src="js/wow.min.js"></script>
     <script>
         new WOW().init();
@@ -369,7 +370,7 @@
                 //uid存在，傳遞至後端check_uid_api.php確認是否合法
                 $.ajax({
                     type: "POST",
-                    url: "api/check_uid_api.php",
+                    url: api_link + "api/check_uid_api.php",
                     data: {
                         uid: getCookie('uid01'),
                     },
@@ -409,7 +410,7 @@
                 console.log("參數正確，可傳送至後端API");
                 $.ajax({
                     type: "POST",
-                    url: "api/product/backstage_update_postAndFile_api.php",
+                    url: api_link + "api/product/backstage_update_postAndFile_api.php",
                     dataType: "json",
                     data: formData,
                     dataType: "json",
@@ -475,7 +476,7 @@
                     //取得產品列表
                     $.ajax({
                         type: "get",
-                        url: "api/product/backstage_r_list.php",
+                        url: api_link + "api/product/backstage_r_list.php",
                         dataType: "json",
                         success: showdata_list,
                         error: function () {
@@ -555,7 +556,7 @@
 
                 $.ajax({
                     type: "POST",
-                    url: "api/product/product_active_status.php",
+                    url: api_link + "api/product/product_active_status.php",
                     data: {
                         id: state_id,
                         active: active,
@@ -588,7 +589,7 @@
                     //傳遞後端control_panel_d_mem_api執行刪除
                     $.ajax({
                         type: "POST",
-                        url: "api/product/backstage_d_list.php",
+                        url: api_link + "api/product/backstage_d_list.php",
                         data: {
                             id: $(this).data("id"),
                         },

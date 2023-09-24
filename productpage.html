@@ -177,7 +177,7 @@
 </head>
 
 <body>
-    <div  class="body-htoc">
+    <div class="body-htoc">
         <!-- header -->
         <div class="body-header">
             <section class="">
@@ -645,6 +645,7 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://unpkg.com/counterup2@2.0.2/dist/index.js">	</script>
     <script src="js/wow.min.js"></script>
+    <script src="js/api_link.js"></script>
     <script src="js/mymodel_and_logout.js"></script>
     <script>
         new WOW().init();
@@ -655,7 +656,7 @@
             $.ajax(
                 {
                     type: "POST",
-                    url: "api/product/productage_read_mem_api.php",
+                    url: api_link + "api/product/productage_read_mem_api.php",
                     //dataType抓資料
                     data: {
                         productage: getCookie('productage'),
@@ -678,13 +679,13 @@
                     var p_photo = $(this).data("photo");
                     $.ajax({
                         type: "post",
-                        url: "api/car/car_c_api.php",
+                        url: api_link + "api/car/car_c_api.php",
                         data: {
                             title: p_title,
                             price: p_price,
                             pnum: p_pnum,
                             username: uid_username,
-                            photo:p_photo
+                            photo: p_photo
                         },
                         dataType: "json",
                         success: showdata_addcar,
@@ -708,13 +709,13 @@
                     var p_photo = $(this).data("photo");
                     $.ajax({
                         type: "post",
-                        url: "api/car/car_c_api.php",
+                        url: api_link + "api/car/car_c_api.php",
                         data: {
                             title: p_title,
                             price: p_price,
                             pnum: p_pnum,
                             username: uid_username,
-                            photo:p_photo
+                            photo: p_photo
                         },
                         dataType: "json",
                         success: showdata_gotocar,
@@ -749,7 +750,7 @@
             $.ajax(
                 {
                     type: "GET",
-                    url: "api/product/productage_read_mem_api.php",
+                    url: api_link + "api/product/productage_read_mem_api.php",
                     //dataType抓資料
                     dataType: "json",
                     success: showdata_underProductage,
@@ -789,7 +790,7 @@
         //立即購買
         function showdata_gotocar(data) {
             console.log(data);
-            location.href="shopcar.html"
+            location.href = "shopcar.html"
         }
         //給登入者狀態使用
         function getCookie(cname) {

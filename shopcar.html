@@ -474,6 +474,7 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://unpkg.com/counterup2@2.0.2/dist/index.js">	</script>
     <script src="js/wow.min.js"></script>
+    <script src="js/api_link.js"></script>
     <!-- <script src="js/mymodel_and_logout.js"></script> -->
     <script>
         new WOW().init();
@@ -486,7 +487,7 @@
                 //uid存在，傳遞至後端check_uid_api.php確認是否合法
                 $.ajax({
                     type: "POST",
-                    url: "api/check_uid_api.php",
+                    url: api_link + "api/check_uid_api.php",
                     data: {
                         uid: getCookie('uid01'),
                     },
@@ -520,7 +521,7 @@
 
                 $.ajax({
                     type: "post",
-                    url: "api/car/oderlist_c_api.php",
+                    url: api_link + "api/car/oderlist_c_api.php",
                     data: {
                         carorder: $('#carorder').text(),//訂單o
                         cartotal: $('#cartotal').text(),//總計o
@@ -557,7 +558,7 @@
             if (data.state) {
                 $.ajax({
                     type: "post",
-                    url: "api/car/oderlist_d_api.php",
+                    url: api_link + "api/car/oderlist_d_api.php",
                     data: {
                         username: member.data[0].Username,
                     },
@@ -600,7 +601,7 @@
                 if (confirm("確認刪除" + $(this).data("title") + "?")) {
                     $.ajax({
                         type: 'post',
-                        url: 'api/car/car_d_api.php',
+                        url: api_link + 'api/car/car_d_api.php',
                         data: {
                             username: $(this).data("username"),
                             title: $(this).data("title")
@@ -657,7 +658,7 @@
                 $.ajax(
                     {
                         type: "POST",
-                        url: "api/car/car_r_api.php",
+                        url: api_link + "api/car/car_r_api.php",
                         data: {
                             username: data.data[0].Username
                         },
@@ -671,9 +672,9 @@
                 )
 
 
-                $("#username").val(data.data[0].Name);
-                $("#tel").val(data.data[0].Tel);
-                $("#address").val(data.data[0].Address);
+                $("#username").val(data.data[0].Name).trigger('input');
+                $("#tel").val(data.data[0].Tel).trigger('input');
+                $("#address").val(data.data[0].Address).trigger('input');
 
                 //基本資料監聽
                 // username 即時監聽
@@ -877,7 +878,7 @@
             // 抓取縣市資料CityCountyData.json
             $.ajax({
                 type: "GET",
-                url: "js/CityCountyData.json",
+                url: api_link + "js/CityCountyData.json",
                 dataType: "json",
                 async: false,
                 success: function (data) {
