@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>運動用品</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/css.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/animate.css_4.1.1_animate.min.css">
+    <link rel="stylesheet" href="css/project.css">
+</head>
+
+<body>
+    <!-- header -->
+    <div class="body-htoc">
+        <div class="body-header">
+            <section class="">
+                <div class="container text-end">
+                    <a href="https://facebook.com/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.youtube.com" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.google.com/maps" target="_blank"><i class="fa-solid fa-map"></i></a>
+                    <span id="login_message" class="text-primary ms-1 d-none">
+                        歡迎xxx回來
+                    </span>
+                    <a href="member.html" class="revise-btn d-none" id="revise_btn">
+                        我的帳戶
+                    </a>
+                    <a href="" class="revise-btn d-none" id="admin"></a>
+                    <a href="#" class="logout-btn d-none" id="logout_btn">
+                        登出
+                    </a>
+                </div>
+            </section>
+        </div>
+
+        <!-- Navbar -->
+        <!-- logo start-->
+        <div class="">
+            <nav class="navbar navbar-expand-lg navbar-light body-logo bg-cover">
+                <a class="navbar-brand d-flex align-items-center mx-auto">
+                    <img
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAACXBIWXMAAAsTAAALEwEAmpwYAAAE3klEQVR4nO2cW4gcRRSGv4iZBS94A81iog+iUTdqwI3iBS/oiw8qor6IxOiTQmIQlGAQETEvAUM0bqKIFwTFaGR1XfAaEUHFPEQwiQaRoCCKxhWzWW+brC0FZ2Boerqru6qnZrrOBweW7amuqvN3nao+3V2gKIqiKIqiKIrS/5wHPAHsBmbEzN8bgSU11bkI2AZMi40Di4mMIWAzMAckXcwcGwNanp0/lVHX73IsGud/lOP4tG33KMK2nHpeIxK2lHB+257yVPd0Th0HiCTmz1UQ4DAwUrMAfxABGys4v20bPNQ/nnP+rUTAHgcBdnmof7FMuOlz/wYsJAKmHQQwZX2wSCbcA2Jbe+l8s5pYD/wE7AeeBU6PTICgbMjo2F/AOuCYCEJQcH7N6aAZFXcBRzR4Eg7O9xYd3QlcVVP9S2RJGWoZGpzVJTr9BnBGDW0YqyDAkzSIlSUmw39lfjDpA58Lge0lnP+h53xQX3CKrIBsw8FXwFKP9bckvZBX/2G58hvn/E4uKHE1mtGwBpjnsf4RmVzNCueg2C75XyNivi03At9aCjEBnEB/MATcCrwpKzyTz5ms8VlCrZihfl+XW/W07QMuDNjWZRLCsnL7idzhDqQIhpOAxyUc5InwD3BPD9s1DDwgT8xsRqoZCQONCTMPAb8UdPQV4NiaQ8xkhfuHWRqCccJtwMc5nd0ruf5ehRgb+5sGcrasUKa65JRWO6QyyoaYIjMTc2Nph4YPMjr+aYm3DMx5rpf08KwnxydygZxFJJwPPC2TctsBf8rV3MoJMWOOISbLDgGv15RC6XtOBh6RtXjbIT8Ay+XmbVhC1JeenW7sa6n7tNBO6Jdl7PrUiNhbMQtaZJuA0dAd7keWAW/X4PC0KR0M1xhiVICCSXhcJsBeOV5HgHCRvFCbBLLo2RHQ+Uns3j/R0XlTKoD7ur+s0w/J6ugWuQvWEeCIbd5mN3A/sCBVXgVw5NqcHM6UZDTzbpRUAA9cKQm4OVkRTUiizuZNChUgMImuglSAqEl0BKgAUZPoCFABoibREaACRE2iI0AFiJqDDiPAvAimOPKFgwA/q/fdWeUggPmYUHFkyOEtCvMGnOKBUyuK8Jh63x8t+Xrz8xIT800qQNhnzQtVgHq4WldAYVlpIYB57KnUxGYLAR5W79fHJxYCXKEC1Md+ixSEz70rlA4WWG7e0Umj95LoNddYCLA2VeZ24OJA7W0c91oIcEmqzEvAO4Ha2zieKXC+2cfiyI7fz5Ot1syxywO2uxEcDXxXIEB6c9WlHcfeDdTuxvCiRfhZkSqzJnVcR0FF7rRw/qzkiTpJbzb1XtUGxMyIfFlfJMCrqXLHp75FbtulgfoxsHF/j4XzZzJ2+O2WM3o/UF8aG/cT4I5UufnANzm/vyxQfxoX9xPg+YyyawvKmF1cFA9x33xbdlRG+QmLsroi8hD3z+1yDrNh4H8lc0aKY9xPM2lxDk1bp1hh6fwXKGbUYhSY+wSlI+7POMR9Ks4FZ1qeq9G0ZEtil7hfdS64ocZ+DQzLPcX9LN4qOKfZ0SV6NnmK+902IO+2V9FnnjcbH1jWeYz7WdydIcKPJcNZoxnNidVl4343zgEelI38TJ7oOA/nbBSPdkkx3xy6YTFxHfCy5Gqek/itKIqiKIqiKAqV+R9kva8etZnipwAAAABJRU5ErkJggg==">
+                    Baseball</a>
+            </nav>
+        </div>
+        <!-- logo end-->
+        <!-- Navbar start-->
+        <section>
+            <div class="container-fluid d-flex justify-content-center">
+                <nav class="navbar navbar-expand-lg navbar-white">
+                    <div class="container-fluid">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link active me-4" aria-current="page" href="project.html"><img
+                                            src="data:image/png;base64,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"
+                                            style="height: 50px;">
+                                        首頁</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link me-4" onclick="doClick('all')" href="productlist.html"><img
+                                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAADh0lEQVR4nO2Z20tVURDGf5WZ3dCytAsV9BDRzfSl6AJmENFDl5fypcCgooiiGylURC/1EtEfEEUPBfVULxEEBd3UpCDSSquHhAorzUuhoRmL5sAw7LPP2cd9thrng8HjWmfPmll7zcy35kAGGWQQNqYAVUAd0CbiPlcC+QxBFACLgUKgDPgM9MeRT0ApQwATgBPAR2Ngn4/xMekCipWuLcAuIDsq4+cDrxMY6RzbBuSKlAPNav6u6FqrxmqAmek2fjLw3hjbCrwEOuR/d4TmejzrxlrkOxc9HOiXWMlJpwMX1GLtwA4gS+bGAKslJuLBxckqYJQa2wN0K73H0nnuY7vsZFOIuvcqvR+A0SHqZpLsvDa+McwF+GfwD6X/K3AGGBdGwNoz7+Qq4eOexzovgBmpKhzvkW3czl8BZhE+FgDXPFLzIxVngXDSBGyYZ94PI4EKoEetvzMVRXonXLaJGpVq/adBHy40eT6lVzhA5KrK3m1Sb0IsUg64IjVY+K7scNkwpTfQIUUqahQAf8QGFw8jgjxcZoiZq7BRY6ta/ydQFITPa0rcYujBA6BWcRb3udroqDWpUM+7gHzisaM3gXr1tucBnUqHS+ljk3GgyrBKS8xic+fM/17f8coi7TI2R425zeiVIzNRjReZCp1UNqxTDzhKbKG5/8oEDnihWuY2qLxfrDbM4rDSdzsZB9rUA7k+DjhpSOIN9JgieEnGT8lmNQEHZOxOnAod01Uf1IE8Hwe08Ykc2Kjmjsj4LxOk7u/5MBzQR6jcx4ES4HcKR2i9mu8V8aMMMYed3Apawpt9ghgJ5GSCWGeh2Wr8rNGxzOhZaoJ4ezIO5Ev3IF4arVFZJUfY4n2jo8YnC7n0+VjGcpSOBnOdtGm0Psh1c80QK2RdwJJUqUT7IFKJvlSpxH9F5lqHI50e9hcapHWo42Azg3elrAjrUt8kHYl0Xeqve1zqHw7kCLu2yjuPwnSZaNoqzwfSVvFrbB1nmDS2NLKltC8PmpOTwD7TWsyKokt9EFgnQReLmdI4DDYGFzsrlIE5QqV1c/coEeCGWvAb8ErR48Y4HeoSdRtrE27Tac78s3S3170c8JK3cgdw18OpwG5TVb2kJoyADXKEHBX+YozQ3D6e2O+8AQ5F+ROTxXTJ4XlS7Fp9jG+URDANWBiU30QFdwxOS2u8Q1Ki4/v75UeSDDLIgPDwFy/jxDVvAcgiAAAAAElFTkSuQmCC"
+                                            style="height: 50px;">新品上市</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link me-4" onclick="doClick('all')" href="productlist.html"><img
+                                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAADOklEQVR4nO2ZTUhVQRTHf2KWQR8QmZFBaJFBiyyhj0XUokUULYLKitwEFWHfRptoUWLfu6BVLrKdlAQtDBLKNCFzEVZUkFZK1qaNFZKlxcT/wuFy31Pfu/fWi/eDWbwzM+fMmTdn5sxcyJIlS5b/kYnAZeCdyiUgjwziBvDLV5zsn2IyUBggPx4weK+4Oj+zpSs2coBa4KsG9R6oA45olkckHwTWqAxKNqI2R9WnV/IvQE1cDhxKMsNeGQYqTZ9KyUbrVxWHA23G4BMzi175AGwN6LdNdbZtL9BhfrfG4cBrGevWcnIsANYDy4FJSfq6uhVq6/ogHW+k0+mOnH4Zaw9RZ7t0Ot2RMtcEaWOIehtNkBcREaXAI7Ne3U4SFseM3jbZCoUcBd8DM/Ne8E0JywgwFegz+p2tFtn24iwlzgZsdc+AhYRPKfA8wJ47c1KiABgyipqBCiCX6JggG83G7pDGMm6W+dZl3LQb+0tTUTANGJAClzYUB7RxO8ZqYJZPPt8nmwHM8bVx9SUqM311ztY32R5QjKREtZmFJl/dYeCnDLi/eYvkS4AfwCdgumT12gisQ66vp/upT3eTqXNjSJlc31HvlpXHS+Ce2pySQ46rwEMlaHsku6W0w2Oe9O0KsFlu7HWEEXM7jcIDRn5ass/Abc38JP12melNOZLMgR6gE7ho6g4ae9vTHXwyB8o06N3AW+AxsFnt7gNd2s9LkjhwDlhn8iJkw7O3I93B+5eQ3Q26NKgTOthcOtCgA2mvUmOXQp+UAx+B88r7y6TvjmT7Eux+aS+hZEG8GLgG3NX9t0Dt7bp2g90EbJRzDQpot3tdMbIzUQTxWLbRqCgOYxstz/SDrCBBKuGO+zhTie8BB92YqQ1Irl6Eme4aFkm3315NGOl0iy+d7kvneB9nOh0apb4LvbuEhEW172IfxT/8h6KIr5TDAUlf6GT0pd7xKsGzygZgJZBPYlzdKrW1zyrdcT6rtI7ysNWfIPgqzL9n79adcT9sVUX4tLifmKhRvu/NYp3uA/W+x921KvZx97ra2sfdAaXnsZIf0vN64Shx81fIiA8cycjTZ6UelQuZ9okpS5YsWRgTvwEohW6+sy/wDQAAAABJRU5ErkJggg=="
+                                            style="height: 50px;">特惠活動</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle me-4" href="#" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false"><img
+                                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAACJklEQVR4nO2YO08VQRSAv3sTOo3hFY3/gBBKGi3ADh+dFnD3RgW0wEpCjO2WFEYTChIfiTRcMPEf8AMMtvIP0J5gCGCBZpJzk5PJ7s7s7h0uxPmSU+zumfOYOXN2dyASiUQikXIMAAnw2pI20PAY3xRde3xLbAdlGtgD/uaIScxFu2D8nvjoOTeBToHjrrzxsPXWw05HfNbGLOkKcGg5MNdrwCrwRd3/5mFzV+lvi421HB8rdcoqr1w2rdkZAv6o5/cKbD5QeqfAoMcqly6rKoY+Kb0D4H5O8AdK733JiXOWlekgyxWXchT4aY3blXp/B3y3nu0DwxVLdzmv2z2uuZnGgV8eG9QkOlazGtpZyotK4bhiOxuRcjrNcGrufXDMfB53gBNlayFL6RpwpJQmqY4J8hHwSuRhxcC7TKq4jiTWTDY8Nlk/+Kji+lykeFsp/gau0n+uWJv5lmuAbmHP1H2TzBNgLlCgTeCp+NAT99xq5U5eWq1wAli3ZmE2QAILVrtcF9/6zW1iczIsXaioFaYBEph3+Dwu0wg6fUigIavwo+ADzxuzmc9U/94Cvp5DAonIlPjsvk/OJKZS3AVeADfkOg2cQJLxX3EdWAJmeuEgdAJpYPsxgTK/mgmXcIkbEnjL83DgwiXQlFXwPd24cAm0L3sJpbELOYgr4CCNJfQ/ldBOxulyXdk5zwRCSxoigaJj8V5LQsBvldXA0gr1KRGJRCL0nH9gHozSZOD/NQAAAABJRU5ErkJggg=="
+                                            style="height: 45px;">
+                                        棒球服裝
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="productlist.html"
+                                                onclick="doClick('1')">球衣</a></li>
+                                        <li><a class="dropdown-item" href="productlist.html"
+                                                onclick="doClick('2')">球褲</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link me-4" href="productlist.html" onclick="doClick('3')"><img
+                                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEzElEQVR4nO2ZeYydYxTGf22ZDpWaTksrWopMItRa0Qip2IYgk0iUCGKQEQkq/MFoKkJIRcU2JSK1NER1iyVoM0VQS+3+oKVCitbWZsqgpp2OkZM8nxz3fst77/1u3Unuk3y5yXee75x3Oe855z0X6qhjyOBQ4CVgG/AdMBvYhSGGC4HtwGDB8xwwnCGCVmCHBt4FjANOBH7Su1sL+HsDdwHrgT793gHsvjMG2whcAjwtw70axBfAbxrw7QXfHKcJ2k4dqHenuQkWPp8Be1VrAsOADuDnBOPR053gQl2SLwBO0eQj/jHinKAFsffvVuNc2S4sc4NdrUm1ACOBk/R+KzApQccE4C/tzO/i36cF8thHAcLkN+Y5CVuVl6XYXGdGDGeR5HMydC1wi7E4ZhIRWsXZAjRXOvhO4Etn2FbxqBhui1bZzkpTht5rpGsDMCaD+4q4s8qdxK7Aiwn+PzdmFR+W7IEAvd+Ie3HAOFrFNXf8FfgT+FB2Dg6ZyCwpsIhyhs7HVS433Om4jTLyt3YmDefrezvMIwLGMTkloJi9e7U4sRitc2DE6QWy04F+ydr07hwpXhUwsFfFtUUJwdXivyA3bFYY79IumeyppI8vF8H8Mw43ud1qcof8yoxBjdEi9JVweFdK90UxsmOBPyQ/L+7jpRJekaDc8sPr4jwhv7UBjs0Y1AxXpoSgSa7cnzLx2dI5L04YHcbDUowc4coQe94MGNij4pq7hOAC8V9L4bSJsyJOuFXC8RmGHnETCUlaG8Q9hDA8I/61GRV2FDz+g2E6yCZsyDA00UWxwqAQh7eBt1ISoEeDIqHpPiCFN9ad1yJE9c+oAINPins/+aJVej/N4DWKZ+e0CJsltLooC0eK26uwnRcelN7bAqqPqGwqwscSTisxRF5HflgvnVMzeHuKZ9V4EaIK16JGCM5yBy7E/0PwPvBOgL6Jsv11nPAWCe8ONGqlxkZ9c7wz0KE885FWrE/3903AB8BjwKWBLpyE6bJrXpF40CzKhGKOi/krXeQLeXbom7PL2NEO6Xgoye/6tXpZJXmEcwsGZ7loiUp2KyX2BXbTBcx24FTlnuddzWTPJ6qlQhHdOGcmEbpFaA+IGje7fPK9MncpEWy0BhLdCAd0a0ysah3W6ZspWYXj8owi8A1nfK7ierkYqQ6LeUJUtJp3JKFFvI1pLtks9xhIucC8J0XfqmGQF452wcOiVxI6xXk8S+E8V+HGYbVua+b/eWM/6V6VUsJEk7VuTObtbLueg6gttJeau+a7OJ1XsqsUDcDawGD0L8a5Ztxl1AY6NZ41gZGtqGHQUwMudrjLOyeXoyCqv9Zpl/4PNGsXEjN5aNJa40oXy9I7E6NUREZ3lIrsm1v94JrOackq70l0uyrX+sIVw+7IP0rp5+7vgWphf+3AoBYx1zM6ScXdoEpya9BVA23AL7KzNqCLWRb2UH8qqlqfzTHDm56otzao/yGr6sbD1V3cIoPW9bungglNUC83akf1qhUU0iPOBTaAhe4y1ad+7JkBCWuE7iYLXffG9CxN+bOo6pii9lC/c4se5aCZSmDj5evtKkY3Oe6AuNaZqQnYSt7gok3W85X6BFbx1iwmq8EwX4m0R11BCw7XK5zXUUcddVAy/gEPMaGLPoc1cgAAAABJRU5ErkJggg=="
+                                            style="height: 50px;">
+                                        棒球手套
+                                    </a>
+
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link me-4" href="productlist.html" onclick="doClick('4')"><img
+                                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEu0lEQVR4nO2aa4gVZRjHfyfNtOyiRRZCkN2TqAxKIugiiJFtQkkERVLRqrm2XiODisIuH7ou9aGL3T5ECF3XvkRQWRESXTfM6EZlWGCm1ma2uxNP/Qeehpk5Z87mOeedPX94YWbe533f+T/v5bnMQBtttFESHAbcCfQB/Sp2fQcwiZLjEmAnEGWUnZIpJTqBIRF9GTgH2E/lXD2LJHMxJSU/BKzMkVslJewADqWE5LtrkH9FSridkpG/vsY250kBHxE4rgEGC5I3jHcHYinILy7Y9gAp4A9KsOwX19E+3gLmGwRNvqvOPnqlAHOWRhz5lW7/TwqV/KI6++h2jtBcAj3wuv4H8vUqsClok6c98ywaacu+0x14CzNkKsAM4AFgPfAV8CXwFnCPYv+oSh8tT35BhoyFtp/mxPy+PESJyFeAW13M/wNwNzBTTo09ew1YDWzW/V/AEgIjPz9DZrVIDUoR41zdq6q7Svf7ALcAA3p+M4GTv8jN6JxE3TFSigU3hyTq5qiN9T2bFiffmSEzBvhOCliWk+B4LKP9MtV/AYwmMPKGK0TgM2AU/0WX6rYpG5yGUYr8TO4yWpD8tVVkX9DLX5fSx4D6uLRKHwvVx3MERt7wo15+yj93/yYzn3F2Pi8JajgVuEvy1ldTMa8g+TGStZnu0D7vF5nftT3SsJfGSvoLg808B2a7E7kW8sjURSkkbFscmdHmKOBdJ2+zvsb5D958NgxnasbsBW4s2PZXtXtPtv3oHNkzgJ+do2QrZG/gcD2zvhqOqcBWvYD57kXxptom7X8Sx7pxepX8jDFXzy1WaCgOAr7W4M9qbxbFGrW3ZZ8Fm+VPJPd8irmMfYUbaDDWauC3daAVxRK3l20Pn5Uht1wym4B9E3Vnq+63RucBF2hgW5ZHDIP8kNsG5hFOTpn9OPiZlaib7Opuo4E4Wb75kPz4oliaiOdt9byjZ9/Itsfo0POPE32YzLeqe0OKagjGA58P49BbnpHMOFjJjzgoegQ4TWPEEZ+FzKcDj0omkuKSQdIexdMa+AOFpbWi4uL6rEyOrYT7gN0p/sH3wHZ3v1vKKfIOw8Y856UdX6CdeWdPuNmN43pynJ0HnYXxxbZITxV/YY/gBJ20UQFPD53avU5xFxYc12KDk1Sa9tPDRIWrRuKpAu2OAz501sI8xuAwTnbeSGwAxtbY7nL3Q5NldU8kQIx2Px9ZWVHjko+9u0jO0oEEiArwuPvZII7Urs5pMw3Y6Npkpb6DIN8jIv1yN1fkKKGixMWfzmU9hRKQjxRhxX5+mhL2d2mtSH6COUvBk9+lZKRdv5ihhJtcQtJM5JUEjEqC/AXa07/kKCEufQUdo5Zf9ltkw5E/nlTCDCkpkv8+gQAxXb60+d5Pupl/X9ebM5Sw3lmFl5qVgxsuOtx3tbjYCX6+7PjrTgmWioqVEJ8JkUxkS32JKYI+kbgfuNdFaPEXnDQlzHIz36NtEyx2iMiElOxMmhK2lIm8YZ3IrHPxdJYSNrhlXwry6DPUTylK6E4oYWbZZj6Zz6+mhF1lJV+rEiKZyFKSr6aEh52lKD2mJpQw0WVj68n8Bq+ESGVAaegRgylKYG7Xt7iiCcw22miDlsTfKbP1tHDu3VQAAAAASUVORK5CYII="
+                                            style="height: 45px;">
+                                        球棒</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link me-4" href="productlist.html" onclick="doClick('5')"><img
+                                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE2ElEQVR4nO2ZCYhVZRTHfzPaZNlQo2lhYVqmLVBhi4XR6kgFWkHSxlRgG1ESIbRY0bSQrVNGCxRJIqZWkFhI2V5iiwqW7TjTYlpmM7TI6DT64sD/wuFy373v3vmeJb0/fDDvu+ee+53v7GeghhpqqCGGXYDrgG+B99lJcTjwGVByq4GdDJOAP3T4X4Cf9PcBBfntB1wCPAG8C/wqLZ9OFXE9sE0Hfx4YDDym39Mq5FEHHAfMBL6MadUvE6YqmOY+cqPbn6i9tcCADB79dev+wL8Di4HpwARgvPa/q4YQFzlN2LrVPasHPtX+HB22HKaKbpM0OUFBw+NC0SwKLcQRQLczp21a5ziao4HNovkAODKBz67A96K5IOV794jmtpBC2G2tEeP52rtJv7fK8SOMl/Pbs+3AGzLBkyVoq9Noh7Typ95ZDjwFnAQ8K5rLQgpyjZh+Awx0+w9rv1dmFplHE/Ao8FeKE2etyITPDSXEbsDPKUxvdx/9ArgWGC1hDgFmx/wqWquAG4ATgEHAvsApimK/ObopoQS5yt3QDH00jmbg6wpueZM0Zf6Whn2AH/TOFaEEiXwjWnZblyfQmVmdByxUCO4ENgKfAA8qMuXJ+pEvPRdCiKPEzEzrDOAdJ9DTVS5HDlSwMD+bpQBQGPfp0ObUPgds0f57MecPBUuod7vvlIAFRZnVKasak7GxZ+agG/TMsnE/wqI5Zs4/AkOKMhvrmJhQSZVvZ4LGQqC//LBZprUdOB7YvQiz6c4XysGSXI8i2omExx4y35LWyiJMXtXLl2bQ3SW6zxPqpb6g0eWvkta9RRht1MsWudJgtdNXOUv4ShPxx6qS14v/aUUYrdDLb1cQZie5HGMZOjRaxd/6lleAPfO8PNzdxPyMstywxEWxkBijy4zMq0d7uXCsa2cXZTRM+wNdor2DcGiL+cnNRRmNc2HWyo2RKbSTVQlHfYQ1W32F5Y+LVWBGkatNbXJuWJHXLkadyu7lDjlVcd9o3wQOIwzGxTRjfUsh7AW87BgtVxOVhInOv3pV+KVpMguj5RvRt5eVqcJzwdrTdY7p4jJl+RD141tdJzlbQmYFjjiagKXAS67aGEqgZNWqFjXqVeYCByXQjpAAke+U1Nd3qndfqvGSZfEs1MtHSmovgggT3fojrkrt0YBtWALtwWqqIl+Lr/XSVhaGuummvfOQ/CepHsyN4RoW9Lobn5lix40yl8E6/Ed67+/YVCZNmBWxi7BBxv3AMSEEOhR40UUtyyu3VNCzWBvwgN7ZovyVhTq1E23yGS/UWpl+nxs/O8jrjvEGDSUaMg62QPTtOe2/XtX3LDeDtnUlgWBF3oeOsR2wJSUHNWrkZLSrZXp5Ue9mbjZIDIY62b0fYpiznl2GfoyrvNdopFQpGhUlo9bCRrjB0U//NuiIJdVTywjT7gLHDEWmOzWKjSaZWcsG41VDg/zFN02vJUSbJo2WKjlwPIyvdHO0qmOgbjqqmC3SvZBgSmep++yQM9vkcVRK3rD9x13FvsMwSGOnzS6XPKO2IA+GAee7/7t0J0x/dgjsIE+64rBbZY9pYKQmKHsrd7TIX+aptehKmIaeyb+MURIgafBdSlnmD28BVyt6/WcwQvnAWuh10lCXNDBPGmnRvMs0VUMNNfyf8Q+ius9srUZ4SwAAAABJRU5ErkJggg=="
+                                            style="height: 45px;">
+                                        球鞋</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link me-4 d-none" id="orderlist" href="orderlist.html"><img
+                                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAyUlEQVR4nO2ZUQqEMBBDc4nK7v1vtAoeJ/szQhELskyqa/Og+FHhEWaIHwLmv+DNzs88LsjV0EECTyQZerUCr1Yy9GqNtlpsvJP95aaDjLZavaCDjDYRurVwr/rtBR0k8ESSoVtrtPrtBR0k8ESSoVsrcGslQ7dW4NYacbX4lD9WPHmWDImSlqMA+MTdCuCtkGRy5CiZIVqSbPaOkh3iSKKgdhRFiL1ExeaQhaglSjbHXD0nlURJXbErgJdaoj6yED2DLIp1MriQLx9G0dbbzPRoAAAAAElFTkSuQmCC"
+                                            style="height: 45px;">
+                                        訂單查詢</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link me-4 d-none" id="shopcar" href="shopcar.html"><img
+                                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAC2ElEQVR4nO2bv2sUQRTHP+dPBH+ABkQRkQNFawsVg4VF1CaNsVcrG8UIMVqowSI5wYtaWKhJwMLGv0BQGwshqSQKIqhHohDwR6FIMIoZGXjqY7lVuJ29nXH2A49ddo/ZN1/ezZs3swslJSUlJb/ZAvQB/Qnrk3v/Pa8Ak2IviVwAQwRsBs4BNWVRCdCMUgD+iNAfmB0F1pERE7h9AwaASqwCGLFBFwLUArJLwCPl+/dW5zIm4CywALin/D8dmwCWE8r/a0QowJjy/0xsAiwGPir/d8YmwAHl+3SrqdAELIAO/8utNmICFSAZ/jtiE2C/i/APWYBR5Xc9S0MmQAFs+H/IOvqHLICz8A9VAGfhH6IATsM/RAH2KX/fZA3/EAUYUf4Ou2jQBCTAIuCd8ndXbAJ0uQ7/0AS45Tr8QxIgl/APSYBcwt8yJ43ao8/cVAJcddlwDfgCDOF3+L9XAuwmMrpU59/KanBUPFACXCEyjqjOzwPbiIRlwFnghxLAVoG5UQH2AL0F7/heBO4CM4kUPQmszKvzVWDiH5uPRdpjYG1ene8ApjzoZDOblq0vmwZzo64e+FXKzSJ3fS8Ax2SZeyFtoKEEOEiEzCkBlhMhDSVADxFST4wBo21IdcdlMdOLKW1HgVngKdCJB1SB8YJEsGNQNx5QUTPBvFPdHeCzEsGerycyNgGvXezvh0y3EuC5T3+BXjl3tu6Wwiopca0AsxRINaUYmpB7LtgInGryMuNDedZ9PE2DU/KbLKxWEy571CwFtgNLKIh6k2JoRM5dDVCDqi1b53tFI6UY6lHX7WidhWeqrcOJe+dlVfo6nhVDKxKRkQW9n6/f77dT4U9yfV72/r0phg45jIDJlAjQr7rYdX9viqExx2PAQOIDh9uy0zOrrt/A4yywJuMz7GLmi788Y6boqXA1pRgadzgP2JD4wOGXPQG24gGVNs0E7bb2SZkU7c17TeAn1Z2pSI7IhVYAAAAASUVORK5CYII="
+                                            style="height: 45px;">
+                                        購物車</a>
+                                </li>
+                            </ul>
+
+
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </section>
+    </div>
+    <hr class="mt-2">
+    <!-- 修改資料內容 -->
+    <div class="">
+        <div class="container">
+            <h1 class="text-center">新增產品</h1>
+            <div class="border border-2 rounded-3 m-5 p-2">
+                <a href="Backstage_list.html" class="row justify-content-center"
+                    style="font-size: 25px; color:brown;">產品列表</a>
+                <div class="row justify-content-center">
+                    <div class="col-8">
+                        <div class="my-3">
+                            <label for="" class="form-label">產品名稱</label>
+                            <input type="text" class="form-control" id="title">
+                        </div>
+                        <div class="my-3">
+                            <label for="" class="form-label">價格</label>
+                            <input type="number" class="form-control" id="price">
+                        </div>
+                        <div class="my-3">
+                            <label for="" class="form-label">產品類型</label>
+                            <select class="form-select" id="ItemCategory">
+                                <option value="1">球衣</option>
+                                <option value="2">球褲</option>
+                                <option value="3">棒球手套</option>
+                                <option value="4">球棒</option>
+                                <option value="5">球鞋</option>
+                            </select>
+                        </div>
+                        <div class="my-3">
+                            <label for="fileupload" class="form-label">照片上傳</label>
+                            <input type="file" class="form-control" id="fileupload" name="fileupload">
+                            <img src="#" alt="" id="previmg" class="d-none w-50 mt-3">
+                        </div>
+                        <a href="#" class="btn btn-info mt-1" id="upload_btn">確定上傳</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr class="mt-3">
+    <!-- footer -->
+    <div class="body-footer">
+        <!-- footer -->
+        <!-- footer start-->
+        <section>
+            <div class="">
+                <div class="body-footer padding15">
+                    <div class="container text-light">
+                        <div class="row">
+                            <div class="col-lg-2 col-md-6">
+                                <div>
+                                    <h2>關於我們</h2>
+                                    <div>
+                                        <div>
+                                            <ul>
+                                                <li><a href="#">關於商城</a></li>
+
+                                                <li><a href="#">服務條款</a></li>
+
+                                                <li><a href="#">購物聲明</a></li>
+
+                                                <li><a href="#">退貨方法</a></li>
+
+                                                <li><a href="#">隱私權政策</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-6">
+                                <div>
+                                    <h2>購物指南</h2>
+                                    <div>
+                                        <ul>
+                                            <li><a href="#">訂單查詢</a></li>
+                                            <li><a href="#">物流配送</a></li>
+                                            <li><a href="#">申請退貨</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-6">
+                                <div>
+                                    <h2>我的帳戶</h2>
+                                    <div>
+                                        <ul>
+                                            <li><a href="#">我的帳戶</a></li>
+                                            <li><a href="#">購物車</a></li>
+                                            <li><a href="#">登入</a></li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <div>
+                                    <h2>聯絡資訊</h2>
+                                    <div>
+                                        <p>地址:台中市西屯區工業區一路100號</p>
+                                        <p>客服專線:04-12345678</p>
+                                        <p>客服時間:周一至周五 10:00-18:00</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 ms-auto">
+                                <div>
+                                    <iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8657.989938072225!2d120.61552141049283!3d24.163442443159337!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693e048d342aa9%3A0x2b6f18a6783fa3b!2z5Yue5YuV6YOo5Yue5YuV5Yqb55m85bGV572y5Lit5b2w5oqV5YiG572y77yI6Ie65Lit6IG36KiT5bGA77yJ!5e0!3m2!1szh-TW!2stw!4v1689668278087!5m2!1szh-TW!2stw"
+                                        width="250px" height="250px" style="border:0;" allowfullscreen="" loading="lazy"
+                                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="" style="background-color: black;">
+            <div class="container">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <p class="text-light">本網站僅供個人作品使用，不做任何商業用途 by 2023雲端班</p>
+                    </li>
+                    <li class="nav-item ms-auto">
+                        <a class="nav-link disabled"><img src="images/footer/paypol.png"></a>
+                    </li>
+            </div>
+        </section>
+        <!-- footer end-->
+    </div>
+
+
+
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script src="https://unpkg.com/counterup2@2.0.2/dist/index.js">	</script>
+    <script src="js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+        var flag_title = false;
+        var flag_price = false;
+
+        $(function () {
+            //取得uid
+            if (getCookie('uid01') != "") {
+                //uid存在，傳遞至後端check_uid_api.php確認是否合法
+                $.ajax({
+                    type: "POST",
+                    url: "api/check_uid_api.php",
+                    data: {
+                        uid: getCookie('uid01'),
+                    },
+                    dataType: "json",
+                    success: showdata_check_uid,
+                    error: function () {
+                        alert("error-api/check_uid_api.php");
+                    }
+
+                });
+            } else {
+                //uid不存在
+                alert("請先登入會員!");
+                location.href = "project.html";
+            }
+
+            //登出鈕
+            $("#logout_btn").click(function () {
+                logout();
+            });
+
+            // 即時監聽 title
+            // var flag_title = false;
+            $("#title").bind("input propertychange", function () {
+                // console.log($(this).val().length);
+                if ($(this).val().length > 1 && $(this).val().length < 20) {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    flag_title = true;
+                } else {
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    flag_title = false;
+                }
+            });
+
+            // 即時監聽 price
+            // var flag_price = false;
+            $("#price").bind("input propertychange", function () {
+                if ($(this).val() > 0 && $(this).val() < 10000) {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    flag_price = true;
+                } else {
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    flag_price = false;
+                }
+            });
+
+
+
+            // 即時監聽 img
+            $("#fileupload").change(function () {
+                console.log("test");
+                console.log(fileupload);
+                console.log(fileupload.files[0]); // 出現圖片的詳細資料
+                console.log(fileupload.files[0].name);
+                console.log(fileupload.files[0].type);
+                console.log(fileupload.files[0].size);
+                console.log(URL.createObjectURL(fileupload.files[0]));
+                // 生成可預覽圖片的網址 
+
+                // 只接受 jpeg / png 格式的圖片
+                if (fileupload.files[0].type == 'image/jpeg' || fileupload.files[0].type == 'image/png') {
+                    $("#previmg").removeClass('d-none');
+                    $("#previmg").attr('src', URL.createObjectURL(fileupload.files[0]))
+                    // attr -> 將監聽物件 內的一個元素換掉
+                } else {
+                    alert("只支援 jpeg / png 格式圖片，請重新上傳");
+                    $("#previmg").addClass('d-none');
+                }
+            });
+
+            $("#upload_btn").click(function () {
+
+                uploadFile();
+            });
+
+
+        });//end fun
+
+        //uid fun
+        function showdata_check_uid(data) {
+            console.log(data);
+            if (data.data[0].Username == "admin") {
+
+                // 顯示後台管理按鈕(可連結至control panel)
+                $("#admin").removeClass("d-none");
+                $("#admin").text('後台產品管理')
+                $("#admin").attr("href", "Backstage_list.html");
+                $("#revise_btn").removeClass('d-none');
+                // 顯示歡迎詞
+                $("#login_message").removeClass('d-none');
+                $("#login_message").text('歡迎' + data.data[0].Name);
+                // 登出按鈕
+                $("#logout_btn").removeClass('d-none');
+                //產品新增按鈕
+
+                //nvbar連結顯示
+                $("#shopcar").removeClass("d-none");
+                $("#orderlist").removeClass("d-none");
+
+            } else {
+                alert("非管理者，請勿進入");
+                location.href = "project.html";
+            }
+        }
+
+        //新增產品按鈕fun
+        function uploadFile() {
+            console.log(fileupload);
+            console.log(fileupload.files[0]);
+
+            // 轉換格式 符合$_FILE需求 ； 利用 FormData()
+            var formData = new FormData();
+            formData.append('title', $("#title").val());//加入title值
+            formData.append('price', $("#price").val());//加入price值
+            formData.append('ItemCategory', $("#ItemCategory").val());
+            //加入ItemCategory值
+
+            formData.append('file', fileupload.files[0]);
+            console.log(formData);
+
+            if (flag_title && flag_price) {
+                console.log("參數正確，可傳送至後端API");
+                $.ajax({
+                    type: "POST",
+                    url: "api/product/product_add_postAndFile_api.php",
+                    dataType: "json",
+                    data: formData,
+                    dataType: "json",
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success: showdata,
+                    error: function () {
+                        alert("錯誤-product_api/pro_c_api.php");
+                    }
+                })
+            } else {
+                console.log(flag_title);
+                console.log(flag_price);
+                console.log("參數錯誤，不可傳送至後端API");
+            }
+
+        }
+
+
+
+        function showdata(data) {
+            console.log(data);
+            if (data.state) {
+                alert(data.message);
+                location.href = "Backstage_Add.html";
+
+            } else {
+                alert(data.message);
+            }
+        }
+
+        //給登入者狀態使用
+        function getCookie(cname) {
+            let name = cname + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        //登出者 
+        function setCookie(cname, cvalue, exdays) {
+            const d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            let expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+
+        //登出帳號
+        //刪除uid並重整畫面
+        function logout() {
+            setCookie('uid01', '', 7);
+            location.href = "project.html";
+        }
+
+        function doClick(data) {
+            switch (data) {
+                case "all":
+                    console.log("all");
+                    setCookie("list", "all", 7);
+                    break;
+                default:
+                    console.log(data);
+                    setCookie("list", data, 7);
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>

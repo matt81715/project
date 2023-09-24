@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>運動用品</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/css.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/animate.css_4.1.1_animate.min.css">
+    <link rel="stylesheet" href="css/project.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <!-- loginModal start-->
+    <section>
+        <div class="modal" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header body-loginModal">
+                        <h5 class="modal-title fs-5" id="exampleModalLabel">會員登入</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="帳號" id="login_username"
+                                name="login_username" />
+                        </div>
+                        <div class="mb-3">
+                            <input type="password" class="form-control" placeholder="密碼" id="login_password"
+                                name="login_password" />
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <button type="button" class="btn body-loginModal col-8" data-bs-dismiss="modal"
+                            id="loginModal_btn">
+                            登入
+                        </button>
+                    </div>
+                    <div class="d-flex justify-content-center mt-3 mb-3">
+                        <a href="#">忘記密碼?</a>
+                    </div>
+                    <div class=""></div>
+                    <div class="modal-footer">
+                        <a href="#" class="me-auto" data-bs-toggle="modal" data-bs-target="#registerModal">創建帳號</a>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                            取消
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- loginModal end-->
+    <!-- registerModal start-->
+    <section>
+        <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header body-registerModal">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">會員註冊</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="mt-3 mb-3">
+                            <!-- <label for="" class="form-label"></label> -->
+                            <input type="text" class="form-control" placeholder="帳號" id="username" />
+                            <div class="valid-feedback" id="valid_message">帳號輸入正確</div>
+                            <div class="invalid-feedback" id="invalid_message">帳號輸入錯誤</div>
+                        </div>
+                        <div class="mb-3">
+                            <!-- <label for="" class="form-label">密碼</label> -->
+                            <input type="password" class="form-control" placeholder="密碼" id="password" />
+                            <div class="valid-feedback">密碼輸入正確</div>
+                            <div class="invalid-feedback">密碼輸入錯誤</div>
+                        </div>
+                        <div class="mb-3">
+                            <!-- <label for="" class="form-label">確認密碼</label> -->
+                            <input type="password" class="form-control" placeholder="確認密碼" />
+                            <div class="valid-feedback">確認密碼輸入正確</div>
+                            <div class="invalid-feedback">確認密碼輸入錯誤</div>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="姓名" id="name" />
+                            <div class="valid-feedback" id="valid_message">姓名輸入正確</div>
+                            <div class="invalid-feedback" id="invalid_message">姓名輸入錯誤</div>
+                        </div>
+                        <div class="mb-3 mt-3">
+                            <!-- <label for="" class="form-label">電話號碼</label> -->
+                            <input type="member" class="form-control" placeholder="電話號碼" id="tel" />
+                            <div class="valid-feedback">確認電話號碼輸入正確</div>
+                            <div class="invalid-feedback">確認電話號碼輸入錯誤</div>
+                        </div>
+                        <div class="mb-3">
+                            <!-- <label for="" class="form-label">信箱</label> -->
+                            <input type="email" class="form-control" placeholder="信箱" id="email" />
+                            <div class="valid-feedback">確認信箱輸入正確</div>
+                            <div class="invalid-feedback">確認信箱輸入錯誤</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="" class="form-label">性別</label>
+                            <div class="form-check form-check-inline ms-3">
+                                <label for="">男</label>
+                                <input type="radio" class="form-check-input" id="gender" name="gender" value="M">
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <label for="">女</label>
+                                <input type="radio" class="form-check-input" id="gender" name="gender" value="W">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="" class="me-auto" data-bs-toggle="modal" data-bs-target="#loginModal">已有帳號</a>
+                        <button type="button" class="btn btn-primary" id="registerModal_btn">
+                            註冊
+                        </button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <!-- registerModal end-->
+
+    <div class="body-htoc">
+        <!-- header start -->
+        <div>
+            <section class="">
+                <div class="container text-end">
+                    <a href="https://facebook.com/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.youtube.com" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.google.com/maps" target="_blank"><i class="fa-solid fa-map"></i></a>
+                    <a class="reg-btn ms-3 me-1 baseball" data-bs-toggle="modal" data-bs-target="#registerModal"
+                        id="register_btn">
+                        註冊
+                    </a>
+                    <a class="login-btn" data-bs-toggle="modal" data-bs-target="#loginModal" id="login_btn">
+                        登入
+                    </a>
+                    <span id="login_message" class="text-primary ms-1 d-none">
+                        歡迎xxx回來
+                    </span>
+                    <a href="member.html" class="revise-btn d-none" id="revise_btn">
+                        修改會員
+                    </a>
+                    <a href="" class="revise-btn d-none" id="admin"></a>
+                    <a href="#" class="logout-btn d-none" id="logout_btn">
+                        登出
+                    </a>
+                </div>
+            </section>
+        </div>
+        <!-- header end -->
+        <!-- Navbar -->
+        <!-- logo start-->
+        <div class="">
+            <nav class="navbar navbar-expand-lg navbar-light ">
+                <a class="navbar-brand d-flex align-items-center mx-auto" href="#">
+                    <img
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAACXBIWXMAAAsTAAALEwEAmpwYAAAE3klEQVR4nO2cW4gcRRSGv4iZBS94A81iog+iUTdqwI3iBS/oiw8qor6IxOiTQmIQlGAQETEvAUM0bqKIFwTFaGR1XfAaEUHFPEQwiQaRoCCKxhWzWW+brC0FZ2Boerqru6qnZrrOBweW7amuqvN3nao+3V2gKIqiKIqiKIrS/5wHPAHsBmbEzN8bgSU11bkI2AZMi40Di4mMIWAzMAckXcwcGwNanp0/lVHX73IsGud/lOP4tG33KMK2nHpeIxK2lHB+257yVPd0Th0HiCTmz1UQ4DAwUrMAfxABGys4v20bPNQ/nnP+rUTAHgcBdnmof7FMuOlz/wYsJAKmHQQwZX2wSCbcA2Jbe+l8s5pYD/wE7AeeBU6PTICgbMjo2F/AOuCYCEJQcH7N6aAZFXcBRzR4Eg7O9xYd3QlcVVP9S2RJGWoZGpzVJTr9BnBGDW0YqyDAkzSIlSUmw39lfjDpA58Lge0lnP+h53xQX3CKrIBsw8FXwFKP9bckvZBX/2G58hvn/E4uKHE1mtGwBpjnsf4RmVzNCueg2C75XyNivi03At9aCjEBnEB/MATcCrwpKzyTz5ms8VlCrZihfl+XW/W07QMuDNjWZRLCsnL7idzhDqQIhpOAxyUc5InwD3BPD9s1DDwgT8xsRqoZCQONCTMPAb8UdPQV4NiaQ8xkhfuHWRqCccJtwMc5nd0ruf5ehRgb+5sGcrasUKa65JRWO6QyyoaYIjMTc2Nph4YPMjr+aYm3DMx5rpf08KwnxydygZxFJJwPPC2TctsBf8rV3MoJMWOOISbLDgGv15RC6XtOBh6RtXjbIT8Ay+XmbVhC1JeenW7sa6n7tNBO6Jdl7PrUiNhbMQtaZJuA0dAd7keWAW/X4PC0KR0M1xhiVICCSXhcJsBeOV5HgHCRvFCbBLLo2RHQ+Uns3j/R0XlTKoD7ur+s0w/J6ugWuQvWEeCIbd5mN3A/sCBVXgVw5NqcHM6UZDTzbpRUAA9cKQm4OVkRTUiizuZNChUgMImuglSAqEl0BKgAUZPoCFABoibREaACRE2iI0AFiJqDDiPAvAimOPKFgwA/q/fdWeUggPmYUHFkyOEtCvMGnOKBUyuK8Jh63x8t+Xrz8xIT800qQNhnzQtVgHq4WldAYVlpIYB57KnUxGYLAR5W79fHJxYCXKEC1Md+ixSEz70rlA4WWG7e0Umj95LoNddYCLA2VeZ24OJA7W0c91oIcEmqzEvAO4Ha2zieKXC+2cfiyI7fz5Ot1syxywO2uxEcDXxXIEB6c9WlHcfeDdTuxvCiRfhZkSqzJnVcR0FF7rRw/qzkiTpJbzb1XtUGxMyIfFlfJMCrqXLHp75FbtulgfoxsHF/j4XzZzJ2+O2WM3o/UF8aG/cT4I5UufnANzm/vyxQfxoX9xPg+YyyawvKmF1cFA9x33xbdlRG+QmLsroi8hD3z+1yDrNh4H8lc0aKY9xPM2lxDk1bp1hh6fwXKGbUYhSY+wSlI+7POMR9Ks4FZ1qeq9G0ZEtil7hfdS64ocZ+DQzLPcX9LN4qOKfZ0SV6NnmK+902IO+2V9FnnjcbH1jWeYz7WdydIcKPJcNZoxnNidVl4343zgEelI38TJ7oOA/nbBSPdkkx3xy6YTFxHfCy5Gqek/itKIqiKIqiKAqV+R9kva8etZnipwAAAABJRU5ErkJggg==">
+                    Baseball</a>
+            </nav>
+        </div>
+        <!-- logo end-->
+        <!-- Navbar start-->
+        <section>
+            <div class="container-fluid d-flex justify-content-center">
+                <nav class="navbar navbar-expand-lg navbar-white">
+                    <div class="container-fluid">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link active me-4" aria-current="page" href="project.html"><img
+                                            src="data:image/png;base64,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"
+                                            style="height: 50px;">
+                                        首頁</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link me-4" onclick="doClick('all')" href="productlist.html"><img
+                                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAADh0lEQVR4nO2Z20tVURDGf5WZ3dCytAsV9BDRzfSl6AJmENFDl5fypcCgooiiGylURC/1EtEfEEUPBfVULxEEBd3UpCDSSquHhAorzUuhoRmL5sAw7LPP2cd9thrng8HjWmfPmll7zcy35kAGGWQQNqYAVUAd0CbiPlcC+QxBFACLgUKgDPgM9MeRT0ApQwATgBPAR2Ngn4/xMekCipWuLcAuIDsq4+cDrxMY6RzbBuSKlAPNav6u6FqrxmqAmek2fjLw3hjbCrwEOuR/d4TmejzrxlrkOxc9HOiXWMlJpwMX1GLtwA4gS+bGAKslJuLBxckqYJQa2wN0K73H0nnuY7vsZFOIuvcqvR+A0SHqZpLsvDa+McwF+GfwD6X/K3AGGBdGwNoz7+Qq4eOexzovgBmpKhzvkW3czl8BZhE+FgDXPFLzIxVngXDSBGyYZ94PI4EKoEetvzMVRXonXLaJGpVq/adBHy40eT6lVzhA5KrK3m1Sb0IsUg64IjVY+K7scNkwpTfQIUUqahQAf8QGFw8jgjxcZoiZq7BRY6ta/ydQFITPa0rcYujBA6BWcRb3udroqDWpUM+7gHzisaM3gXr1tucBnUqHS+ljk3GgyrBKS8xic+fM/17f8coi7TI2R425zeiVIzNRjReZCp1UNqxTDzhKbKG5/8oEDnihWuY2qLxfrDbM4rDSdzsZB9rUA7k+DjhpSOIN9JgieEnGT8lmNQEHZOxOnAod01Uf1IE8Hwe08Ykc2Kjmjsj4LxOk7u/5MBzQR6jcx4ES4HcKR2i9mu8V8aMMMYed3Apawpt9ghgJ5GSCWGeh2Wr8rNGxzOhZaoJ4ezIO5Ev3IF4arVFZJUfY4n2jo8YnC7n0+VjGcpSOBnOdtGm0Psh1c80QK2RdwJJUqUT7IFKJvlSpxH9F5lqHI50e9hcapHWo42Azg3elrAjrUt8kHYl0Xeqve1zqHw7kCLu2yjuPwnSZaNoqzwfSVvFrbB1nmDS2NLKltC8PmpOTwD7TWsyKokt9EFgnQReLmdI4DDYGFzsrlIE5QqV1c/coEeCGWvAb8ErR48Y4HeoSdRtrE27Tac78s3S3170c8JK3cgdw18OpwG5TVb2kJoyADXKEHBX+YozQ3D6e2O+8AQ5F+ROTxXTJ4XlS7Fp9jG+URDANWBiU30QFdwxOS2u8Q1Ki4/v75UeSDDLIgPDwFy/jxDVvAcgiAAAAAElFTkSuQmCC"
+                                            style="height: 50px;">新品上市</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link me-4" onclick="doClick('all')" href="productlist.html"><img
+                                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAADOklEQVR4nO2ZTUhVQRTHf2KWQR8QmZFBaJFBiyyhj0XUokUULYLKitwEFWHfRptoUWLfu6BVLrKdlAQtDBLKNCFzEVZUkFZK1qaNFZKlxcT/wuFy31Pfu/fWi/eDWbwzM+fMmTdn5sxcyJIlS5b/kYnAZeCdyiUgjwziBvDLV5zsn2IyUBggPx4weK+4Oj+zpSs2coBa4KsG9R6oA45olkckHwTWqAxKNqI2R9WnV/IvQE1cDhxKMsNeGQYqTZ9KyUbrVxWHA23G4BMzi175AGwN6LdNdbZtL9BhfrfG4cBrGevWcnIsANYDy4FJSfq6uhVq6/ogHW+k0+mOnH4Zaw9RZ7t0Ot2RMtcEaWOIehtNkBcREaXAI7Ne3U4SFseM3jbZCoUcBd8DM/Ne8E0JywgwFegz+p2tFtn24iwlzgZsdc+AhYRPKfA8wJ47c1KiABgyipqBCiCX6JggG83G7pDGMm6W+dZl3LQb+0tTUTANGJAClzYUB7RxO8ZqYJZPPt8nmwHM8bVx9SUqM311ztY32R5QjKREtZmFJl/dYeCnDLi/eYvkS4AfwCdgumT12gisQ66vp/upT3eTqXNjSJlc31HvlpXHS+Ce2pySQ46rwEMlaHsku6W0w2Oe9O0KsFlu7HWEEXM7jcIDRn5ass/Abc38JP12melNOZLMgR6gE7ho6g4ae9vTHXwyB8o06N3AW+AxsFnt7gNd2s9LkjhwDlhn8iJkw7O3I93B+5eQ3Q26NKgTOthcOtCgA2mvUmOXQp+UAx+B88r7y6TvjmT7Eux+aS+hZEG8GLgG3NX9t0Dt7bp2g90EbJRzDQpot3tdMbIzUQTxWLbRqCgOYxstz/SDrCBBKuGO+zhTie8BB92YqQ1Irl6Eme4aFkm3315NGOl0iy+d7kvneB9nOh0apb4LvbuEhEW172IfxT/8h6KIr5TDAUlf6GT0pd7xKsGzygZgJZBPYlzdKrW1zyrdcT6rtI7ysNWfIPgqzL9n79adcT9sVUX4tLifmKhRvu/NYp3uA/W+x921KvZx97ra2sfdAaXnsZIf0vN64Shx81fIiA8cycjTZ6UelQuZ9okpS5YsWRgTvwEohW6+sy/wDQAAAABJRU5ErkJggg=="
+                                            style="height: 50px;">特惠活動</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle me-4" href="#" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false"><img
+                                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAACJklEQVR4nO2YO08VQRSAv3sTOo3hFY3/gBBKGi3ADh+dFnD3RgW0wEpCjO2WFEYTChIfiTRcMPEf8AMMtvIP0J5gCGCBZpJzk5PJ7s7s7h0uxPmSU+zumfOYOXN2dyASiUQikXIMAAnw2pI20PAY3xRde3xLbAdlGtgD/uaIScxFu2D8nvjoOTeBToHjrrzxsPXWw05HfNbGLOkKcGg5MNdrwCrwRd3/5mFzV+lvi421HB8rdcoqr1w2rdkZAv6o5/cKbD5QeqfAoMcqly6rKoY+Kb0D4H5O8AdK733JiXOWlekgyxWXchT4aY3blXp/B3y3nu0DwxVLdzmv2z2uuZnGgV8eG9QkOlazGtpZyotK4bhiOxuRcjrNcGrufXDMfB53gBNlayFL6RpwpJQmqY4J8hHwSuRhxcC7TKq4jiTWTDY8Nlk/+Kji+lykeFsp/gau0n+uWJv5lmuAbmHP1H2TzBNgLlCgTeCp+NAT99xq5U5eWq1wAli3ZmE2QAILVrtcF9/6zW1iczIsXaioFaYBEph3+Dwu0wg6fUigIavwo+ADzxuzmc9U/94Cvp5DAonIlPjsvk/OJKZS3AVeADfkOg2cQJLxX3EdWAJmeuEgdAJpYPsxgTK/mgmXcIkbEnjL83DgwiXQlFXwPd24cAm0L3sJpbELOYgr4CCNJfQ/ldBOxulyXdk5zwRCSxoigaJj8V5LQsBvldXA0gr1KRGJRCL0nH9gHozSZOD/NQAAAABJRU5ErkJggg=="
+                                            style="height: 45px;">
+                                        棒球服裝
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="productlist.html"
+                                                onclick="doClick('1')">球衣</a></li>
+                                        <li><a class="dropdown-item" href="productlist.html"
+                                                onclick="doClick('2')">球褲</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link me-4" href="productlist.html" onclick="doClick('3')"><img
+                                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEzElEQVR4nO2ZeYydYxTGf22ZDpWaTksrWopMItRa0Qip2IYgk0iUCGKQEQkq/MFoKkJIRcU2JSK1NER1iyVoM0VQS+3+oKVCitbWZsqgpp2OkZM8nxz3fst77/1u3Unuk3y5yXee75x3Oe855z0X6qhjyOBQ4CVgG/AdMBvYhSGGC4HtwGDB8xwwnCGCVmCHBt4FjANOBH7Su1sL+HsDdwHrgT793gHsvjMG2whcAjwtw70axBfAbxrw7QXfHKcJ2k4dqHenuQkWPp8Be1VrAsOADuDnBOPR053gQl2SLwBO0eQj/jHinKAFsffvVuNc2S4sc4NdrUm1ACOBk/R+KzApQccE4C/tzO/i36cF8thHAcLkN+Y5CVuVl6XYXGdGDGeR5HMydC1wi7E4ZhIRWsXZAjRXOvhO4Etn2FbxqBhui1bZzkpTht5rpGsDMCaD+4q4s8qdxK7Aiwn+PzdmFR+W7IEAvd+Ie3HAOFrFNXf8FfgT+FB2Dg6ZyCwpsIhyhs7HVS433Om4jTLyt3YmDefrezvMIwLGMTkloJi9e7U4sRitc2DE6QWy04F+ydr07hwpXhUwsFfFtUUJwdXivyA3bFYY79IumeyppI8vF8H8Mw43ud1qcof8yoxBjdEi9JVweFdK90UxsmOBPyQ/L+7jpRJekaDc8sPr4jwhv7UBjs0Y1AxXpoSgSa7cnzLx2dI5L04YHcbDUowc4coQe94MGNij4pq7hOAC8V9L4bSJsyJOuFXC8RmGHnETCUlaG8Q9hDA8I/61GRV2FDz+g2E6yCZsyDA00UWxwqAQh7eBt1ISoEeDIqHpPiCFN9ad1yJE9c+oAINPins/+aJVej/N4DWKZ+e0CJsltLooC0eK26uwnRcelN7bAqqPqGwqwscSTisxRF5HflgvnVMzeHuKZ9V4EaIK16JGCM5yBy7E/0PwPvBOgL6Jsv11nPAWCe8ONGqlxkZ9c7wz0KE885FWrE/3903AB8BjwKWBLpyE6bJrXpF40CzKhGKOi/krXeQLeXbom7PL2NEO6Xgoye/6tXpZJXmEcwsGZ7loiUp2KyX2BXbTBcx24FTlnuddzWTPJ6qlQhHdOGcmEbpFaA+IGje7fPK9MncpEWy0BhLdCAd0a0ysah3W6ZspWYXj8owi8A1nfK7ierkYqQ6LeUJUtJp3JKFFvI1pLtks9xhIucC8J0XfqmGQF452wcOiVxI6xXk8S+E8V+HGYbVua+b/eWM/6V6VUsJEk7VuTObtbLueg6gttJeau+a7OJ1XsqsUDcDawGD0L8a5Ztxl1AY6NZ41gZGtqGHQUwMudrjLOyeXoyCqv9Zpl/4PNGsXEjN5aNJa40oXy9I7E6NUREZ3lIrsm1v94JrOackq70l0uyrX+sIVw+7IP0rp5+7vgWphf+3AoBYx1zM6ScXdoEpya9BVA23AL7KzNqCLWRb2UH8qqlqfzTHDm56otzao/yGr6sbD1V3cIoPW9bungglNUC83akf1qhUU0iPOBTaAhe4y1ad+7JkBCWuE7iYLXffG9CxN+bOo6pii9lC/c4se5aCZSmDj5evtKkY3Oe6AuNaZqQnYSt7gok3W85X6BFbx1iwmq8EwX4m0R11BCw7XK5zXUUcddVAy/gEPMaGLPoc1cgAAAABJRU5ErkJggg=="
+                                            style="height: 50px;">
+                                        棒球手套
+                                    </a>
+
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link me-4" href="productlist.html" onclick="doClick('4')"><img
+                                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEu0lEQVR4nO2aa4gVZRjHfyfNtOyiRRZCkN2TqAxKIugiiJFtQkkERVLRqrm2XiODisIuH7ou9aGL3T5ECF3XvkRQWRESXTfM6EZlWGCm1ma2uxNP/Qeehpk5Z87mOeedPX94YWbe533f+T/v5bnMQBtttFESHAbcCfQB/Sp2fQcwiZLjEmAnEGWUnZIpJTqBIRF9GTgH2E/lXD2LJHMxJSU/BKzMkVslJewADqWE5LtrkH9FSridkpG/vsY250kBHxE4rgEGC5I3jHcHYinILy7Y9gAp4A9KsOwX19E+3gLmGwRNvqvOPnqlAHOWRhz5lW7/TwqV/KI6++h2jtBcAj3wuv4H8vUqsClok6c98ywaacu+0x14CzNkKsAM4AFgPfAV8CXwFnCPYv+oSh8tT35BhoyFtp/mxPy+PESJyFeAW13M/wNwNzBTTo09ew1YDWzW/V/AEgIjPz9DZrVIDUoR41zdq6q7Svf7ALcAA3p+M4GTv8jN6JxE3TFSigU3hyTq5qiN9T2bFiffmSEzBvhOCliWk+B4LKP9MtV/AYwmMPKGK0TgM2AU/0WX6rYpG5yGUYr8TO4yWpD8tVVkX9DLX5fSx4D6uLRKHwvVx3MERt7wo15+yj93/yYzn3F2Pi8JajgVuEvy1ldTMa8g+TGStZnu0D7vF5nftT3SsJfGSvoLg808B2a7E7kW8sjURSkkbFscmdHmKOBdJ2+zvsb5D958NgxnasbsBW4s2PZXtXtPtv3oHNkzgJ+do2QrZG/gcD2zvhqOqcBWvYD57kXxptom7X8Sx7pxepX8jDFXzy1WaCgOAr7W4M9qbxbFGrW3ZZ8Fm+VPJPd8irmMfYUbaDDWauC3daAVxRK3l20Pn5Uht1wym4B9E3Vnq+63RucBF2hgW5ZHDIP8kNsG5hFOTpn9OPiZlaib7Opuo4E4Wb75kPz4oliaiOdt9byjZ9/Itsfo0POPE32YzLeqe0OKagjGA58P49BbnpHMOFjJjzgoegQ4TWPEEZ+FzKcDj0omkuKSQdIexdMa+AOFpbWi4uL6rEyOrYT7gN0p/sH3wHZ3v1vKKfIOw8Y856UdX6CdeWdPuNmN43pynJ0HnYXxxbZITxV/YY/gBJ20UQFPD53avU5xFxYc12KDk1Sa9tPDRIWrRuKpAu2OAz501sI8xuAwTnbeSGwAxtbY7nL3Q5NldU8kQIx2Px9ZWVHjko+9u0jO0oEEiArwuPvZII7Urs5pMw3Y6Npkpb6DIN8jIv1yN1fkKKGixMWfzmU9hRKQjxRhxX5+mhL2d2mtSH6COUvBk9+lZKRdv5ihhJtcQtJM5JUEjEqC/AXa07/kKCEufQUdo5Zf9ltkw5E/nlTCDCkpkv8+gQAxXb60+d5Pupl/X9ebM5Sw3lmFl5qVgxsuOtx3tbjYCX6+7PjrTgmWioqVEJ8JkUxkS32JKYI+kbgfuNdFaPEXnDQlzHIz36NtEyx2iMiElOxMmhK2lIm8YZ3IrHPxdJYSNrhlXwry6DPUTylK6E4oYWbZZj6Zz6+mhF1lJV+rEiKZyFKSr6aEh52lKD2mJpQw0WVj68n8Bq+ESGVAaegRgylKYG7Xt7iiCcw22miDlsTfKbP1tHDu3VQAAAAASUVORK5CYII="
+                                            style="height: 45px;">
+                                        球棒</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link me-4" href="productlist.html" onclick="doClick('5')"><img
+                                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE2ElEQVR4nO2ZCYhVZRTHfzPaZNlQo2lhYVqmLVBhi4XR6kgFWkHSxlRgG1ESIbRY0bSQrVNGCxRJIqZWkFhI2V5iiwqW7TjTYlpmM7TI6DT64sD/wuFy373v3vmeJb0/fDDvu+ee+53v7GeghhpqqCGGXYDrgG+B99lJcTjwGVByq4GdDJOAP3T4X4Cf9PcBBfntB1wCPAG8C/wqLZ9OFXE9sE0Hfx4YDDym39Mq5FEHHAfMBL6MadUvE6YqmOY+cqPbn6i9tcCADB79dev+wL8Di4HpwARgvPa/q4YQFzlN2LrVPasHPtX+HB22HKaKbpM0OUFBw+NC0SwKLcQRQLczp21a5ziao4HNovkAODKBz67A96K5IOV794jmtpBC2G2tEeP52rtJv7fK8SOMl/Pbs+3AGzLBkyVoq9Noh7Typ95ZDjwFnAQ8K5rLQgpyjZh+Awx0+w9rv1dmFplHE/Ao8FeKE2etyITPDSXEbsDPKUxvdx/9ArgWGC1hDgFmx/wqWquAG4ATgEHAvsApimK/ObopoQS5yt3QDH00jmbg6wpueZM0Zf6Whn2AH/TOFaEEiXwjWnZblyfQmVmdByxUCO4ENgKfAA8qMuXJ+pEvPRdCiKPEzEzrDOAdJ9DTVS5HDlSwMD+bpQBQGPfp0ObUPgds0f57MecPBUuod7vvlIAFRZnVKasak7GxZ+agG/TMsnE/wqI5Zs4/AkOKMhvrmJhQSZVvZ4LGQqC//LBZprUdOB7YvQiz6c4XysGSXI8i2omExx4y35LWyiJMXtXLl2bQ3SW6zxPqpb6g0eWvkta9RRht1MsWudJgtdNXOUv4ShPxx6qS14v/aUUYrdDLb1cQZie5HGMZOjRaxd/6lleAPfO8PNzdxPyMstywxEWxkBijy4zMq0d7uXCsa2cXZTRM+wNdor2DcGiL+cnNRRmNc2HWyo2RKbSTVQlHfYQ1W32F5Y+LVWBGkatNbXJuWJHXLkadyu7lDjlVcd9o3wQOIwzGxTRjfUsh7AW87BgtVxOVhInOv3pV+KVpMguj5RvRt5eVqcJzwdrTdY7p4jJl+RD141tdJzlbQmYFjjiagKXAS67aGEqgZNWqFjXqVeYCByXQjpAAke+U1Nd3qndfqvGSZfEs1MtHSmovgggT3fojrkrt0YBtWALtwWqqIl+Lr/XSVhaGuummvfOQ/CepHsyN4RoW9Lobn5lix40yl8E6/Ed67+/YVCZNmBWxi7BBxv3AMSEEOhR40UUtyyu3VNCzWBvwgN7ZovyVhTq1E23yGS/UWpl+nxs/O8jrjvEGDSUaMg62QPTtOe2/XtX3LDeDtnUlgWBF3oeOsR2wJSUHNWrkZLSrZXp5Ue9mbjZIDIY62b0fYpiznl2GfoyrvNdopFQpGhUlo9bCRrjB0U//NuiIJdVTywjT7gLHDEWmOzWKjSaZWcsG41VDg/zFN02vJUSbJo2WKjlwPIyvdHO0qmOgbjqqmC3SvZBgSmep++yQM9vkcVRK3rD9x13FvsMwSGOnzS6XPKO2IA+GAee7/7t0J0x/dgjsIE+64rBbZY9pYKQmKHsrd7TIX+aptehKmIaeyb+MURIgafBdSlnmD28BVyt6/WcwQvnAWuh10lCXNDBPGmnRvMs0VUMNNfyf8Q+ius9srUZ4SwAAAABJRU5ErkJggg=="
+                                            style="height: 45px;">
+                                        球鞋</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link me-4 d-none" id="orderlist" href="orderlist.html"><img
+                                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAyUlEQVR4nO2ZUQqEMBBDc4nK7v1vtAoeJ/szQhELskyqa/Og+FHhEWaIHwLmv+DNzs88LsjV0EECTyQZerUCr1Yy9GqNtlpsvJP95aaDjLZavaCDjDYRurVwr/rtBR0k8ESSoVtrtPrtBR0k8ESSoVsrcGslQ7dW4NYacbX4lD9WPHmWDImSlqMA+MTdCuCtkGRy5CiZIVqSbPaOkh3iSKKgdhRFiL1ExeaQhaglSjbHXD0nlURJXbErgJdaoj6yED2DLIp1MriQLx9G0dbbzPRoAAAAAElFTkSuQmCC"
+                                            style="height: 45px;">
+                                        訂單查詢</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link me-4 d-none" id="shopcar" href="shopcar.html"><img
+                                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAC2ElEQVR4nO2bv2sUQRTHP+dPBH+ABkQRkQNFawsVg4VF1CaNsVcrG8UIMVqowSI5wYtaWKhJwMLGv0BQGwshqSQKIqhHohDwR6FIMIoZGXjqY7lVuJ29nXH2A49ddo/ZN1/ezZs3swslJSUlJb/ZAvQB/Qnrk3v/Pa8Ak2IviVwAQwRsBs4BNWVRCdCMUgD+iNAfmB0F1pERE7h9AwaASqwCGLFBFwLUArJLwCPl+/dW5zIm4CywALin/D8dmwCWE8r/a0QowJjy/0xsAiwGPir/d8YmwAHl+3SrqdAELIAO/8utNmICFSAZ/jtiE2C/i/APWYBR5Xc9S0MmQAFs+H/IOvqHLICz8A9VAGfhH6IATsM/RAH2KX/fZA3/EAUYUf4Ou2jQBCTAIuCd8ndXbAJ0uQ7/0AS45Tr8QxIgl/APSYBcwt8yJ43ao8/cVAJcddlwDfgCDOF3+L9XAuwmMrpU59/KanBUPFACXCEyjqjOzwPbiIRlwFnghxLAVoG5UQH2AL0F7/heBO4CM4kUPQmszKvzVWDiH5uPRdpjYG1ene8ApjzoZDOblq0vmwZzo64e+FXKzSJ3fS8Ax2SZeyFtoKEEOEiEzCkBlhMhDSVADxFST4wBo21IdcdlMdOLKW1HgVngKdCJB1SB8YJEsGNQNx5QUTPBvFPdHeCzEsGerycyNgGvXezvh0y3EuC5T3+BXjl3tu6Wwiopca0AsxRINaUYmpB7LtgInGryMuNDedZ9PE2DU/KbLKxWEy571CwFtgNLKIh6k2JoRM5dDVCDqi1b53tFI6UY6lHX7WidhWeqrcOJe+dlVfo6nhVDKxKRkQW9n6/f77dT4U9yfV72/r0phg45jIDJlAjQr7rYdX9viqExx2PAQOIDh9uy0zOrrt/A4yywJuMz7GLmi788Y6boqXA1pRgadzgP2JD4wOGXPQG24gGVNs0E7bb2SZkU7c17TeAn1Z2pSI7IhVYAAAAASUVORK5CYII="
+                                            style="height: 45px;">
+                                        購物車</a>
+                                </li>
+                            </ul>
+
+
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </section>
+        <!-- Navbar end-->
+
+        <!-- Carousel start -->
+        <section>
+            <div class="Carousel_box">
+                <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" data-bs-interval="10000">
+                            <img src="images/basellball/wade-austin-ellis-GudTmd-Q3Cg-unsplash.jpg"
+                                class="d-block w-100" style="height: 1000px;" alt="...">
+                        </div>
+                        <div class="carousel-item" data-bs-interval="2000">
+                            <img src="images/basellball/kenny-eliason-J4RSyiz_M3I-unsplash.jpg" class="d-block w-100"
+                                style="height: 1000px;" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/basellball/isaac-lind-uS13l4UMgOw-unsplash.jpg" class="d-block w-100"
+                                style="height: 1000px;" alt="...">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+
+        </section>
+        <!-- Carousel end -->
+    </div>
+
+    <!-- sidebar start-->
+    <div>
+        <div class="sidebar-right" id="addmember">
+            <h3><a data-bs-toggle="modal" data-bs-target="#registerModal"
+                id="register_btn" href="#">加入會員</a></h3>
+        </div>
+        <!-- New product-->
+        <section class="body-new">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="">
+                        <img
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFnklEQVR4nO1Za2wUVRQetPFB/KFIe8+d7e62Zdvta2cwjZEmMJeVRZ4WaWxJ6w8TUqECRhJNFcT4Q8VHMYEYSaqNUARikAQKimkx0gjRGsvDRC0WiDX2QelMCzPEWCN7zZ2l29nH7Htpf/QkX3Z39s6533fvueeeucNx0zZt05ZKm8HzbieAVIkxeQ5h6RUGAGkDAHkaQCriOJLBTSXDuGxmFiY1AKQVgTQKmNDIkAaZyMnmzdnt5EEA8jZgokYnHQiMyebJ5D4DgNQjICNmIwxY+hJh0gRA3mVAmHyEMDmBsNSLgJy1WEj2uLPMTPIAwmQLwIJnme+0MkeoPIuRCyaNMPmNkcjMdM+J1ycAec8g/jjPL3o4TeQX5AKWLgcQB+kiAKlKZuQAyLagAbnC+kopeZ6fXwBA+g2d3EJYanQ4lt5rds8jQ9cd4rC2UZTVg6KsnhNlTRFk9V8fNNl3TT0oDo5s4oXVTYCJ1zAwfazPlJC32eY/BEB6JpyTvxFauCJcW0JphjiiPSPI2veiotF4kN/S2g0W95h/kID0ZGfPm5WKBdtuiFENY2lBuIaCcnOpoGg98RIXDShu+4Hi3MW3DIPVltTCzsKkzhA2XoSk6uA2Zf10pqhozckQFw0o/OIkBYvbvyYYhzhpkwyEpQYE0gWzPI6AfJedPe9+YVDLEhX1LOu45EIPtTxaHdd+ADECgXSecYphFycZgKVTsTi1LqpbJSraRX8M72hJC3kISNdSR0QRet0SiyOL+4zw17XzxqlP5wxAoIiGSAK6JmJP2lpcXHxPuHapjHkxGq6OUMc7zUYBP5kLAOJPY6bk5ZtP3DHyym0MjhjX35ipAONUhYqTTgNPfhQGlEvjjq0rntdh/B2wToL+M/6O5MMapl0kbjEJGL/ueOvjEKfhOgkWENw2mg8xXQLA7qGlXd1xdT61BGBCbRUbqSirkyZAGB3NTVgAX1Khfzr3HE04hIpaO3SICQoQFXV9wgLGiY8LiVdA4edtvlLB4vZ9D/ZhX6wj4gzI6v6EBTBn9tUvBo1I7CGEc5eE/S7ebld09JSOKDPQlZSAkvO/+0YqAQEMuS9s1wFhBsEMgTOgXUtKAANLp4mEkL1yMxWujuqwV24O8WF9ciO1rtwQeQZk9Z+4BViX1XsDNpjBEWpdui6+jcxTR129Q/5rrt4h/VpAu+X1OhISEKmU0B8D73QJoYSWEmDzmIcQK5T8DUF6zShCkNWA6nOyijmrp858EbNSNTiOUw3LY2to6c+XEy7BHY17WRr9LNLTWEe6ReTv3J/QQ5CtYhMVhq6bb2QGEQ0IyLkpMQM2jx42jsYWH3lZ9YqjozkRBBhCipfWGpx583cfSurUISWQtdNcHDYDYelrvwiLe6y4vXNyBShayMlI1IMt/QhxXITd43Ue/iblxFyX+qjrz4k9IhwERfu1itK7uXiNHdoCJgOGmaB5W3ZRcVBJmrjQJ9O8V3dSnO2mfP4yWnruonnbYe1xLlFDiOQEzARbkOW11HngKyoO34if+NB16jxwImQRF+w7bhb7u7lkDWMymx2Bh2SW8lrq2N6sF3mRF6BKSzp/oY7391BLWVVIxrHXvEyF/uFw93ba/6D3JS1gQoi0DuGFYV8n8aWrqK36Jb3anLPtQ5q3dRfNrX9Tv2Z8hgi4p6SCOluOmQnvLlPV2Vw6XjHhopU7cN6S/xLdE3jXU3pV67oyYEa+c66qZnLptOI3Ppk1p3HPyZzaBooLlsdEOmft69S595hepEXI97tTGjbRbK6seUT5RjfLIoWH2mlB02G9bsn/oIUWfHqEFh751n+aES1VCslkm2SM5WiXotUIsnZG3/JjzUqy6mU7rKBoazhK7+KmgrGjD1Z0sQdwdgR/+7XSGIMga8OsJBZ8/62PubaZNm7q2f/TehqlQkhsGQAAAABJRU5ErkJggg==">
+                        新品上市
+                        <img
+                            src="data:image/png;base64,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">
+                    </h2>
+                </div>
+                <div class="row row-cols-1 row-cols-md-2 justify-content-start mt-3">
+                    <div class="col-md-3">
+                        <div class="" style="width: 300px;">
+                            <figure>
+                                <img src="images/fielding gloves/louismoto-r_VwX2_1-10-unsplash.jpg"
+                                    class="img-fluid rounded figure-img" alt="">
+                            </figure>
+                            <div class="text-center">
+                                <h5 class="card-title mb-2">防守手套</h5>
+                                <p class="card-text">$1000</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="" style="width: 300px;">
+                            <figure>
+                                <img src="images/fielding gloves/kenny-nguy-n-fSrlWGw7d9g-unsplash.jpg"
+                                    class="img-fluid rounded figure-img" alt="">
+                            </figure>
+                            <div class="text-center">
+                                <h5 class="card-title mb-2">防守手套</h5>
+                                <p class="card-text">$1000</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="" style="width: 300px;">
+                            <figure>
+                                <img src="images/bat/lesly-juarez-gNYQxI5ufII-unsplash.jpg"
+                                    class="img-fluid rounded figure-img" alt="">
+                            </figure>
+                            <div class="text-center">
+                                <h5 class="card-title mb-2">MLB紀念球</h5>
+                                <p class="card-text">$1000</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="" style="width: 300px;">
+                            <figure>
+                                <img src="images/hat/kenny-nguy-n-B2yyBOqP_EE-unsplash.jpg"
+                                    class="img-fluid rounded figure-img" alt="">
+                            </figure>
+                            <div class="text-center">
+                                <h5 class="card-title mb-2">打擊頭盔</h5>
+                                <p class="card-text">$1000</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sale product -->
+        <!-- Sale product start -->
+        <section class="body-sale">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class=""><img
+                            src="data:image/png;base64,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">
+                        特惠活動
+                        <img
+                            src="data:image/png;base64,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">
+                    </h2>
+                </div>
+                <div class="row row-cols-1 row-cols-md-2 justify-content-start mt-3">
+                    <div class="col-md-3">
+                        <div class="" style="width: 300px;">
+                            <figure>
+                                <img src="images/fielding gloves/dillon-wanner-jWUhrccnu4E-unsplash.jpg"
+                                    class="img-fluid rounded figure-img" alt="">
+                            </figure>
+                            <div class="text-center">
+                                <h5 class="card-title mb-2">防守手套</h5>
+                                <p class="card-text">$1000</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="" style="width: 300px;">
+                            <figure>
+                                <img src="images/bat/tyler-hilton-j0NC55PxYy0-unsplash.jpg"
+                                    class="img-fluid rounded figure-img" alt="">
+                            </figure>
+                            <div class="text-center">
+                                <h5 class="card-title mb-2">球</h5>
+                                <p class="card-text">$1000</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="" style="width: 300px;">
+                            <figure>
+                                <img src="images/basellball/dez-hester-dezhester-eYCOVbyDY0M-unsplash.jpg"
+                                    class="img-fluid rounded figure-img" alt="">
+                            </figure>
+                            <div class="text-center">
+                                <h5 class="card-title mb-2">球衣</h5>
+                                <p class="card-text">$1000</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="" style="width: 300px;">
+                            <figure>
+                                <img src="images/bat/kenny-nguy-n-k5IbFlOzSaI-unsplash.jpg"
+                                    class="img-fluid rounded figure-img" alt="">
+                            </figure>
+                            <div class="text-center">
+                                <h5 class="card-title mb-2">球棒</h5>
+                                <p class="card-text">$1000</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Sale product end -->
+
+        <!-- video -->
+        <!-- video start-->
+        <section class="body-video bg-resize">
+            <div class="video">
+                <video controls autoplay loop width="100%" height="720px">
+                    <source src="video/production_id_5182768 (2160p) (online-video-cutter).mp4" type="video/mp4" />
+                </video>
+            </div>
+        </section>
+        <!-- video end-->
+        <!-- product -->
+        <!-- product start -->
+        <div class="body-product bg-resize">
+            <div class="">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 col-12">
+                            <div class="">
+                                <a href="#">
+                                    <img src="images/basellball/elisabeth-wales-RahcCeNFuqw-unsplash.jpg"
+                                        style="height: 500px; width: 400px;">
+                                </a>
+                            </div>
+                            <div class="mt-3">
+                                <a href="#">
+                                    <img src="images/basellball/mick-haupt-4lrSbFyLhvk-unsplash.jpg"
+                                        style="height: 300px; width: 400px;">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-12">
+                            <div class="mb-3">
+                                <a href="#">
+                                    <img src="images/hat/robbie-noble-JGcaxNi2fQ8-unsplash.jpg"
+                                        style="height: 200px; width: 400px;">
+                                </a>
+                            </div>
+                            <div class="">
+                                <a href="#">
+                                    <img src="images/basellball/sinitta-leunen-Wyxk72Z71rI-unsplash.jpg"
+                                        style="height: 600px;">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-12">
+                            <div class="">
+                                <a href="#">
+                                    <img src="images/fielding gloves/ksenia-emelianchik-siMgFP85KB8-unsplash.jpg"
+                                        style="height: 500px; width: 400px;">
+                                </a>
+                            </div>
+                            <div class="mt-3">
+                                <a href="#">
+                                    <img src="images/bat/jose-francisco-morales-hKzmPs8Axh8-unsplash.jpg"
+                                        style="height: 300px; width: 400px;">
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- product end -->
+        <!-- manufacturer start-->
+        <section class="body-manufacturer">
+            <div class="container">
+                <div class="row">
+                    <div class="d-flex align-items-center justify-content-center flex-wrap">
+                        <div class="cycle-brand-item p-4 rounded text-center position-relative">
+                            <img src="images/logo/cpbl_logo.png" alt="" class="img-fluid Manufacturer"
+                                style="height: 150px; width: 200px;">
+                        </div>
+                        <div class="cycle-brand-item p-4 rounded text-center position-relative">
+                            <img src="images/logo/MLB_logo.png" alt="" class="img-fluid Manufacturer"
+                                style="height: 100px; width: 200px; ">
+                        </div>
+                        <div class="cycle-brand-item p-4 rounded text-center position-relative">
+                            <img src="images/logo/NPB_logo.png" alt="" class="img-fluid Manufacturer"
+                                style="height: 200px; width: 150px; ">
+                        </div>
+                        <div class="cycle-brand-item p-4 rounded text-center position-relative">
+                            <img src="images/logo/KBO_logo.jpg" alt="" class="img-fluid Manufacturer"
+                                style="height: 200px; width: 150px; ">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- manufacturer end-->
+        <!-- footer -->
+        <!-- footer start-->
+        <section>
+            <div class="body-footer">
+                <div class="padding15">
+                    <div class="container text-light">
+                        <div class="row">
+                            <div class="col-lg-2 col-md-6">
+                                <div>
+                                    <h2>關於我們</h2>
+                                    <div>
+                                        <div>
+                                            <ul>
+                                                <li><a href="#">關於商城</a></li>
+
+                                                <li><a href="#">服務條款</a></li>
+
+                                                <li><a href="#">購物聲明</a></li>
+
+                                                <li><a href="#">退貨方法</a></li>
+
+                                                <li><a href="#">隱私權政策</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-6">
+                                <div>
+                                    <h2>購物指南</h2>
+                                    <div>
+                                        <ul>
+                                            <li><a href="#">訂單查詢</a></li>
+                                            <li><a href="#">物流配送</a></li>
+                                            <li><a href="#">申請退貨</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-6">
+                                <div>
+                                    <h2>我的帳戶</h2>
+                                    <div>
+                                        <ul>
+                                            <li><a href="#">我的帳戶</a></li>
+                                            <li><a href="#">購物車</a></li>
+                                            <li><a href="#">登入</a></li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <div>
+                                    <h2>聯絡資訊</h2>
+                                    <div>
+                                        <p>地址:台中市西屯區工業區一路100號</p>
+                                        <p>客服專線:04-12345678</p>
+                                        <p>客服時間:周一至周五 10:00-18:00</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 ms-auto">
+                                <div>
+                                    <iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8657.989938072225!2d120.61552141049283!3d24.163442443159337!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693e048d342aa9%3A0x2b6f18a6783fa3b!2z5Yue5YuV6YOo5Yue5YuV5Yqb55m85bGV572y5Lit5b2w5oqV5YiG572y77yI6Ie65Lit6IG36KiT5bGA77yJ!5e0!3m2!1szh-TW!2stw!4v1689668278087!5m2!1szh-TW!2stw"
+                                        width="250px" height="250px" style="border:0;" allowfullscreen="" loading="lazy"
+                                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+    <!-- sidebarend-->
+
+    <section class="" style="background-color: black;">
+        <div class="container">
+            <ul class="nav">
+                <li class="nav-item">
+                    <p class="text-light">本網站僅供個人作品使用，不做任何商業用途 by 2023雲端班</p>
+                </li>
+                <li class="nav-item ms-auto">
+                    <a class="nav-link disabled"><img src="images/footer/paypol.png"></a>
+                </li>
+        </div>
+    </section>
+    <!-- footer end-->
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script src="js/mymodel_and_logout.js"></script>
+</body>
+
+</html>
