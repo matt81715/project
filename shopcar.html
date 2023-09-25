@@ -13,7 +13,7 @@
     <style>
         .orderbox {
 
-            width: 1800px;
+            /* width: 1800px; */
         }
 
         .button-30 {
@@ -498,10 +498,10 @@
                     }
 
                 });
-            } else {
-                alert("請先登入會員");
-                location.href = "project.html";
-            }
+            // } else {
+            //     alert("請先登入會員");
+            //     location.href = "project.html";
+             }
 
 
             /*----------------------------------------------------------------------*/
@@ -581,7 +581,7 @@
 
             $('#carlist').empty();
             data.data.forEach(function (item) {
-                var strHtml = ' <tr><td width="20%" data-th="商品相片" class=""><span class="table-col"><img src="imgupload/' + item.Photo + '" style="height: 200px; width: 300px;"></span></td><td width="20%" data-th="商品" class=""><span class="table-col">' + item.Title + '</span></td><td width="10%" data-th="單價" class="price"> <span class="table-col">$<span id="price' + item.ID + '">' + item.Price + '</span></span></td><th width="20%" data-th="數量" class=""><span class="table-col"><div><button class="" id="subtractpnum' + item.ID + '" onclick="subtractpnum(' + item.ID + ')"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIUlEQVR4nGNgGAWjYBSMApLBfyrhgbNgFIyCUTAKGDABAOkcI91xODUvAAAAAElFTkSuQmCC" style="height: 15px;"></button><input type="" id="input' + item.ID + '" class="quantity" value="' + item.Pnum + '" style="text-align: center; width: 100px;" disabled><button class="" onclick="addpnum(' + item.ID + ')"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAANklEQVR4nGNgGGngPxSPWoAT/B8NIkLg/8gOov9UxvS3YOjHATHg/6gFhMD/0SAa8CBiGHQAAOITS7WQXzPpAAAAAElFTkSuQmCC" style="height: 15px;"></button></div></span></th><td width="10%" data-th="訂單金額" class="totalPrice" id="total' + item.ID + '"><span class="table-col"></span></td><td width="10%" data-th="狀態" class=""><span class="table-col"></span><button id="carlist_del_btn" data-username="' + item.Username + '" data-title="' + item.Title + '">X</button></td></tr>'
+                var strHtml = ' <tr><td width="20%" data-th="商品相片" class=""><span class="table-col"><img src="'+api_link+'imgupload/' + item.Photo + '" style="height: 200px; width: 300px;"></span></td><td width="20%" data-th="商品" class=""><span class="table-col">' + item.Title + '</span></td><td width="10%" data-th="單價" class="price"> <span class="table-col">$<span id="price' + item.ID + '">' + item.Price + '</span></span></td><th width="20%" data-th="數量" class=""><span class="table-col"><div><button class="" id="subtractpnum' + item.ID + '" onclick="subtractpnum(' + item.ID + ')"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIUlEQVR4nGNgGAWjYBSMApLBfyrhgbNgFIyCUTAKGDABAOkcI91xODUvAAAAAElFTkSuQmCC" style="height: 15px;"></button><input type="" id="input' + item.ID + '" class="quantity" value="' + item.Pnum + '" style="text-align: center; width: 100px;" disabled><button class="" onclick="addpnum(' + item.ID + ')"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAANklEQVR4nGNgGGngPxSPWoAT/B8NIkLg/8gOov9UxvS3YOjHATHg/6gFhMD/0SAa8CBiGHQAAOITS7WQXzPpAAAAAElFTkSuQmCC" style="height: 15px;"></button></div></span></th><td width="10%" data-th="訂單金額" class="totalPrice" id="total' + item.ID + '"><span class="table-col"></span></td><td width="10%" data-th="狀態" class=""><span class="table-col"></span><button id="carlist_del_btn" data-username="' + item.Username + '" data-title="' + item.Title + '">X</button></td></tr>'
 
                 $("#carlist").append(strHtml);
 
