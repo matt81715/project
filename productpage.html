@@ -738,7 +738,7 @@
             console.log(data);
             data.data.forEach(function (item) {
                 $("#productage").removeClass("d-none");
-                $("#productageImg").attr("src", 'imgupload/' + item.Photo);
+                $("#productageImg").attr("src", api_link+'imgupload/' + item.Photo);
                 $("#productageTitle").text(item.Title);
                 $("#addcar").attr("data-id", item.ID).attr("data-productagetitle", item.Title).attr("data-price", item.Price).attr("data-photo", item.Photo);
                 $("#gotocar").attr("data-id", item.ID).attr("data-productagetitle", item.Title).attr("data-price", item.Price).attr("data-photo", item.Photo);
