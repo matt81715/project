@@ -39,27 +39,27 @@ a {
 }
 
 .body-new {
-    background-image: url(/images/background/codioful-formerly-gradienta-pYDaWACPVZw-unsplash.jpg);
+    background-image: url(../images/background/codioful-formerly-gradienta-pYDaWACPVZw-unsplash.jpg);
     background-size: cover;
     background-position: center 60%;
     padding: 30px;
 }
 
 .body-sale {
-    background-image: url(/images/background/codioful-formerly-gradienta-pYDaWACPVZw-unsplash\(1\).jpg);
+    background-image: url(../images/background/codioful-formerly-gradienta-pYDaWACPVZw-unsplash\(1\).jpg);
     background-size: cover;
     background-position: center 35%;
     padding: 30px;
 }
 
 .body-video {
-    background-image: url(/images/background/visax-1Ib8eQgpBy0-unsplash.jpg);
+    background-image: url(../images/background/visax-1Ib8eQgpBy0-unsplash.jpg);
     background-size: cover;
     padding: 10px;
 }
 
 .body-product {
-    background-image: url(/images/background/pawel-czerwinski-Qiy4hr18aGs-unsplash.jpg);
+    background-image: url(../images/background/pawel-czerwinski-Qiy4hr18aGs-unsplash.jpg);
     background-size: cover;
     background-position: center top;
     padding: 30px;
@@ -67,7 +67,7 @@ a {
 }
 
 .body-manufacturer {
-    background-image: url(/images/background/visax-w9eLXdvbmrs-unsplash.jpg);
+    background-image: url(../images/background/visax-w9eLXdvbmrs-unsplash.jpg);
     background-size: cover;
     background-position: center 50%;
 
