@@ -704,7 +704,7 @@
 
                 // shipping_btn按鈕監聽
 
-                $('input[type="radio"]').change(function () {
+                $('input[type="radio"]').click(function () {
                     var radio_val = $(this).val();
 
                     if (radio_val == "超商") {
@@ -878,7 +878,7 @@
             // 抓取縣市資料CityCountyData.json
             $.ajax({
                 type: "GET",
-                url: api_link + "js/CityCountyData.json",
+                url:"js/CityCountyData.json",
                 dataType: "json",
                 async: false,
                 success: function (data) {
