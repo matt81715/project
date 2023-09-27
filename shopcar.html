@@ -673,11 +673,11 @@
 
                 $("#tel").val(data.data[0].Tel);
                 $("#address").val(data.data[0].Address);
-                $("#username").val(data.data[0].Name);
+                $("#username").val(data.data[0].Name).trigger("input");
 
                 //基本資料監聽
                 // username 即時監聽
-                $("#username").bind("oninput", function () {
+                $("#username").on("input", function () {
 
                     if ($(this).val().length < 6 && !empty($(this).val())) {
                         $(this).removeClass("is-invalid");
