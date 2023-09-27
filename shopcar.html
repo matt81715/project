@@ -498,9 +498,9 @@
                     }
 
                 });
-                } else {
-                    alert("請先登入會員");
-                    location.href = "project.html";
+            } else {
+                alert("請先登入會員");
+                location.href = "project.html";
             }
 
 
@@ -679,7 +679,7 @@
                 // username 即時監聽
                 $("#username").bind("input propertychange", function () {
 
-                    if ($(this).val().length > 6) {
+                    if ($(this).val().length < 6 && empty($(this).val())) {
                         $(this).removeClass("is-valid");
                         $(this).addClass("is-invalid");
                         flag_username = false;
