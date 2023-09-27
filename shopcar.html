@@ -498,9 +498,9 @@
                     }
 
                 });
-                // } else {
-                //     alert("請先登入會員");
-                //     location.href = "project.html";
+                } else {
+                    alert("請先登入會員");
+                    location.href = "project.html";
             }
 
 
@@ -938,6 +938,19 @@
             //     console.log()
             // });
         })
+
+        function doClick(data) {
+            switch (data) {
+                case "all":
+                    console.log("all");
+                    setCookie("list", "all", 7);
+                    break;
+                default:
+                    console.log(data);
+                    setCookie("list", data, 7);
+                    break;
+            }
+        }
 
     </script>
 </body>

@@ -347,7 +347,10 @@
                 alert("請先登入會員");
                 location.href = "project.html";
             }
-
+            //登出鈕
+            $("#logout_btn").click(function () {
+                logout();
+            });
 
         });
 
@@ -382,7 +385,19 @@
             setCookie('uid01', '', 7);
             location.href = "project.html";
         }
-
+        
+        function doClick(data) {
+            switch (data) {
+                case "all":
+                    console.log("all");
+                    setCookie("list", "all", 7);
+                    break;
+                default:
+                    console.log(data);
+                    setCookie("list", data, 7);
+                    break;
+            }
+        }
         //check uid
         function showdata_check_uid(data) {
             console.log(data);
@@ -410,10 +425,7 @@
 
                 }
 
-                //登出鈕
-                $("#logout_btn").click(function () {
-                    logout();
-                });
+
 
                 // VUE
                 console.log(uid_username);
