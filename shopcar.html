@@ -627,7 +627,7 @@
             }
         }
 
-        var flag_username = true;
+        var flag_username = false;
         var flag_tel = true;
         var flag_address = true;
         var carpay;
@@ -680,13 +680,13 @@
                 $("#username").bind("input propertychange", function () {
 
                     if ($(this).val().length < 6 && empty($(this).val())) {
-                        $(this).removeClass("is-valid");
-                        $(this).addClass("is-invalid");
-                        flag_username = false;
-                    } else {
                         $(this).removeClass("is-invalid");
                         $(this).addClass("is-valid");
                         flag_username = true;
+                    } else {
+                        $(this).removeClass("is-valid");
+                        $(this).addClass("is-invalid");
+                        flag_username = false;
                     }
                 });
                 // tel 即時監聽
