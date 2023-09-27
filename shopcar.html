@@ -677,7 +677,7 @@
 
                 //基本資料監聽
                 // username 即時監聽
-                $("#username").bind("input propertychange", function () {
+                $("#username").bind("oninput", function () {
 
                     if ($(this).val().length < 6 && !empty($(this).val())) {
                         $(this).removeClass("is-invalid");
