@@ -679,7 +679,7 @@
                 // username 即時監聽
                 $("#username").bind("input propertychange", function () {
 
-                    if ($(this).val().length < 6 && empty($(this).val())) {
+                    if ($(this).val().length < 6 && !empty($(this).val())) {
                         $(this).removeClass("is-invalid");
                         $(this).addClass("is-valid");
                         flag_username = true;
