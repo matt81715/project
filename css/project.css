@@ -319,9 +319,106 @@ video::-webkit-media-controls-panel {
 }
 
 /* RWD */
+@media screen and (max-width: 576px) {
+    .figure-img {
+        width: 350px;
+    }
+
+    .sidebar-right {
+        padding: 20px;
+        width: 100px;
+    }
+    .Carousel_box {
+        padding-left: 2px;
+        padding-right: 2px;
+    
+    }
+}
+
 @media screen and (max-width: 768px) {
     .video {
         max-width: auto;
         max-height: 600px;
+    }
+
+    .imgwall {
+        width: 450px;
+        margin-top: 5px;
+    }
+
+    .sidebar-right {
+        padding: 5px;
+        width: 70px;
+    }
+    .Carousel_box {
+        padding-left: 10px;
+        padding-right: 10px;
+    
+    }
+    .Carousel_img{
+     height: 400px;   
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width:992px) {
+    .imgwall {
+        width: 235px;
+    }
+
+    .sidebar-right {
+        padding: 5px;
+        width: 70px;
+    }
+    .Carousel_box {
+        padding-left: 50px;
+        padding-right: 50px;
+    
+    }
+    .Carousel_img{
+        height: 500px;
+    }
+}
+
+@media screen and (min-width:993px) and (max-width:1200px) {
+    .imgwall {
+        width: 300px;
+    }
+
+    .sidebar-right {
+        padding: 10px;
+        width: 80px;
+    }
+    .Carousel_box {
+        padding-left: 80px;
+        padding-right: 80px;
+    
+    }
+    .Carousel_img{
+        height: 600px;
+    }
+
+}
+
+@media screen and (min-width:1201px) and (max-width:1400px) {
+    .imgwall {
+        width: 350px;
+    }
+
+    .sidebar-right {
+        padding: 15px;
+        width: 90px;
+    }
+    .Carousel_img{
+        height: 800px;
+    }
+
+}
+
+@media screen and (min-width:1401px) {
+    .imgwall {
+        width: 400px;
+    }
+    .Carousel_img{
+        height: 1000px;
     }
 }
