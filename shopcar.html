@@ -11,10 +11,10 @@
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="css/project.css">
     <style>
-        .orderbox {
+        /* .orderbox {
 
-            /* width: 1800px; */
-        }
+            width: 1800px;
+        } */
 
         .button-30 {
             align-items: center;
@@ -188,14 +188,14 @@
     <div class="container-fluid ms-2">
         <nav class="ms-5" aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#"><i class="fa-solid fa-house text-dark"></i></a></li>
+                <li class="breadcrumb-item"><a href="project.html"><i class="fa-solid fa-house text-dark"></i></a></li>
                 <li class="breadcrumb-item active" aria-current="page"><a href="#" class="text-dark ">購物車</a></li>
             </ol>
         </nav>
         <div class="orderbox">
             <h2 class="text-center mt-3 mb-3">結帳</h2>
             <div class="row">
-                <div class="col-8">
+                <div class="col-sm-12 col-xl-8">
                     <h4 class="text-center mt-3 mb-3">購物車內容</h4>
                     <table class="table table-striped table-bordered table-hover table-sm table-rwd">
                         <thead class="text-bg-secondary">
@@ -243,7 +243,7 @@
                     <div class="text-end me-5">總計: <span id="totalAmount" style="font-size: 30px;">0</span></div>
                     <hr>
                 </div>
-                <div class="col-xl-4 col-lg-2 col-md-2">
+                <div class="col-sm-8 col-xl-4 offset-sm-2 offset-xl-0">
                     <div class="container">
                         <h3 class="mt-3">購買人資訊</h3>
                         <div>
@@ -281,13 +281,18 @@
 
                                 <div id="shipping1" class="d-none">
                                     <a href="https://emap.pcsc.com.tw/ecmap/default.aspx" target="_blank">
-                                        <button type="button" class="form-control mt-2 mb-2">
+                                        <!-- <button type="button" class="form-control mt-2 mb-2">
                                             <span>超商取貨</span>
-                                        </button>
+                                        </button> -->
+                                        <input type="radio" class="btn-check" name="" id="" autocomplete="off" checked>
+                                        <label class="btn btn-outline-success mb-2" for=""
+                                            style="width: 100%;">超商取貨</label>
                                     </a>
                                 </div>
                                 <div id="shipping2" class="d-none">
-                                    <button type="button" class="form-control mt-2 mb-2"><span>貨運</span></button>
+                                    <!-- <button type="button" class="form-control mt-2 mb-2"><span>貨運</span></button> -->
+                                    <input type="radio" class="btn-check" name="" id="" autocomplete="off" checked>
+                                    <label class="btn btn-outline-success mb-2" for="" style="width: 100%;">貨運</label>
                                     <p>請填寫地址</p>
                                     <div>
                                         <div>
@@ -314,8 +319,8 @@
                                             <div>
                                                 <div>付款方式</div>
                                             </div>
-                                            <div class="row-fulid input-row">
-                                                <div class="col-xs-6">
+                                            <div class="row">
+                                                <!-- <div class="col-xs-6 mt-2">
                                                     <button onclick="pay(1)" type="button" class="form-control">
                                                         <div>
                                                             <div class="title"><img
@@ -325,8 +330,9 @@
                                                         </div>
                                                     </button>
                                                 </div>
-                                                <div class="col-xs-6">
-                                                    <button onclick="pay(2)" type="button" class="form-control">
+                                                <div class="col-xs-6 mt-2">
+                                                    <button onclick="pay(2)" type="button" class="form-control active"
+                                                        aria-pressed="true">
                                                         <div>
                                                             <div class="title">
                                                                 <img
@@ -334,12 +340,27 @@
                                                             </div>
                                                         </div>
                                                     </button>
+                                                </div> -->
+                                                <div class="mb-2">
+                                                    <input type="radio" class="btn-check" name="btnradio" id="btnradio1"
+                                                        autocomplete="off" value="信用卡">
+                                                    <label class="btn btn-outline-primary" for="btnradio1"
+                                                        style="width: 100%;"><img
+                                                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEJElEQVR4nO1aS1PbMBDmxJ8l9Ag9NUOLH4lfJE2Y6YWUW8OlTBugPbRnOnmQEBJOLZ2haX8BM/ZJHdl52NLKjiPZ0EY7sxdFCOnT7rerL9nYkCZNmjRp0qRJkyZNmjRpa2zF4smmtXVUMreOfluFBvpPfWIWGjo+KwWAWWjoT2CDuTg+KwWAVWhM8Ifa+S+ktN3MXO96qD72UPmKHj+8jTo5Z+aVIT13Ga99uZ9HAgQAwp7l4bWOi+ojD9kDjxqvjaKbJefM3Bq4Kx1+5rNzPgoA1RsXVW48pHTo8fAmoTnYyz0XHY69fxMAZ+D5t6x1ojfrXBNhOvKQSsyZR8mY8/b77uMAYFwFN6d3o+NmnzgQMMf3joteEymS1g+GAai5A6B3XVS/9ZBxFb1VvReMhzeJgYLWOBjy3TwGb84heQKgtoObw2GeSHrEHGaUpHQMcjiqcgWgMvR8giPHq0QZq2LSA/6+1AsOwAMAJs7wmrkBYGPSG2PSo8cjpDeOIz1Oxh/Q+8oFgPKU9Eo9gAzD4YlJj5jDKo1pHUcftO5qAFw+oLJygcrW18UNvf+BzJ137JZzt4m007soGRI3avbhTR5c8x0+KKWuOABKb74FPfTeh8VCO83knnu3GZAhUMYcJul5QkmPGwD1fIKs7bfI2j5G2sWEWsj77oAeXo/s3XF4q9DhX7b4Hzr7rdj0TA2A8eLUH8dRAC2UBIBFdHo4DTTghjDpOcoZNwDGK8EAmJwAkCFa6nrZkB7j/cCfAp//IOvZsZ8Gq6TAMqSH3wlcpOeXW3htISRYnpIgToc0JGg/b843idtZaG2yNKYmPdb7QSQAyuUDMvY+IkM5X+Ts6R2yd5uxh699+rnoxTvsdwIPAAYjqsQC0IbKVdCpkYRGChb1sQuS3uydwHN41vshcwBKPVjWogQLoBvklbWSSmnmAGjTHh2LC/R49PZxlEBr2AJIj9XpZQ5A9Qbos4FObyZAgO8EzrzHEbjK4bkBcIbBQUn0ScEiLECEHXoPZE16wgAw+3DJIQULVi8ugvRYpTRzAPSuh5x9dp/uqGeUAIHL5jLzZ560PimaxK0f1w6nBkCbavnWPrtPxz08KUDgTSTNjwCgste3lTOkElEVt75QAKpMLX85AUKElk/KWrmlgH0N6/QOQHpQWRKh5ZuArJULAAah5cflXJKHcx7KdYgT4kpp5gDogJYfl3OJAIRyHsp1iBNYpTRzANRpubKX0PKx2AH+E8Fafq4AVHwtnz7Ysl9gCtHyGd8Q5QJADdDyHUKljf8CU7yWnysAOqXl05tkhefrkQBZq/3IACgJvTvrC0wyStI6q5TmCcAEf6C17lP/agOKkqdCepEUbcX8RMZcox9JWVtHGgVAsXiyOQXBj4S1+5mcNGnSpEmTJk2atI31sr9bknDFo9ZrogAAAABJRU5ErkJggg==">信用卡</label>
+                                                </div>
+                                                <div class="mb-2">
+                                                    <input type="radio" class="btn-check" name="btnradio" id="btnradio2"
+                                                        autocomplete="off" value="貨到付款">
+                                                    <label class="btn btn-outline-primary" for="btnradio2"
+                                                        style="width: 100%;"><img
+                                                            src="//cdn.cybassets.com/assets/shop/v3/icons/market_icon_o-4677f0c1335a5250e56f84453ec45056802c4e1742ff783180dba7e3164418f9.png">貨到付款</label>
                                                 </div>
                                             </div>
                                         </div>
                                         <div>備註</div>
                                         <textarea rows="1" class="form-control"
-                                            style="min-width: 100%; max-width: 100%; width: 100%;" id="remark">
+                                            style="min-width: 100%; max-width: 100%; width: 100%; height: 100px;"
+                                            id="remark">
 
                                             </textarea>
                                     </div>
@@ -348,7 +369,7 @@
                         </div>
                         <a class="mt-5 mb-5 rounded-3 button-30" id="checkout_btn" data-bs-toggle="modal"
                             data-bs-target="#checkoutModal" style="width: 100%; height: 40px;"
-                            id="Checkout_now">立即結帳</a>
+                            id="Checkout_now">訂單確認</a>
                     </div>
                 </div>
             </div>
@@ -498,9 +519,9 @@
                     }
 
                 });
-                } else {
-                    alert("請先登入會員");
-                    location.href = "project.html";
+            } else {
+                alert("請先登入會員");
+                location.href = "project.html";
             }
 
 
@@ -509,15 +530,6 @@
 
             //modal結帳
             $('#carcheckout').click(function () {
-                console.log($('#carorder').text());//訂單o
-                console.log($('#cartotal').text());//總計o
-                console.log($('#carname').text());//姓名o
-                console.log($('#carname').data('username'));//帳號o
-                console.log($('#cartel').text());//電話o
-                console.log($('#cardelivery').text());//配送方式o
-                console.log($('#caraddress').text());//地址x
-                console.log($('#carorderpay').text());//付款方式o
-                console.log($('#carremark').text());//備註
 
                 $.ajax({
                     type: "post",
@@ -553,7 +565,7 @@
 
         //上傳生成訂單
         function orderlist(data) {
-            console.log(data);
+
 
             if (data.state) {
                 $.ajax({
@@ -564,7 +576,7 @@
                     },
                     dataType: 'json',
                     success: function orderlist_del_car(data) {
-                        console.log(data);
+
                         location.href = "orderlist.html";
                     },
                     error: function () {
@@ -577,11 +589,10 @@
         var total
         // //產品資料撈取
         function showdata_carlist(data) {
-            console.log(data);
 
             $('#carlist').empty();
             data.data.forEach(function (item) {
-                var strHtml = ' <tr><td width="20%" data-th="商品相片" class=""><span class="table-col"><img src="' + api_link + 'imgupload/' + item.Photo + '" style="height: 200px; width: 300px;"></span></td><td width="20%" data-th="商品" class=""><span class="table-col">' + item.Title + '</span></td><td width="10%" data-th="單價" class="price"> <span class="table-col">$<span id="price' + item.ID + '">' + item.Price + '</span></span></td><th width="20%" data-th="數量" class=""><span class="table-col"><div><button class="" id="subtractpnum' + item.ID + '" onclick="subtractpnum(' + item.ID + ')"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIUlEQVR4nGNgGAWjYBSMApLBfyrhgbNgFIyCUTAKGDABAOkcI91xODUvAAAAAElFTkSuQmCC" style="height: 15px;"></button><input type="" id="input' + item.ID + '" class="quantity" value="' + item.Pnum + '" style="text-align: center; width: 100px;" disabled><button class="" onclick="addpnum(' + item.ID + ')"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAANklEQVR4nGNgGGngPxSPWoAT/B8NIkLg/8gOov9UxvS3YOjHATHg/6gFhMD/0SAa8CBiGHQAAOITS7WQXzPpAAAAAElFTkSuQmCC" style="height: 15px;"></button></div></span></th><td width="10%" data-th="訂單金額" class="totalPrice" id="total' + item.ID + '"><span class="table-col"></span></td><td width="10%" data-th="狀態" class=""><span class="table-col"></span><button id="carlist_del_btn" data-username="' + item.Username + '" data-title="' + item.Title + '">X</button></td></tr>'
+                var strHtml = ' <tr><td width="20%" data-th="商品相片" class=""><span class="table-col"><img src="' + api_link + 'imgupload/' + item.Photo + '" style="height: 200px; width: 300px;"></span></td><td width="20%" data-th="商品" class=""><span class="table-col">' + item.Title + '</span></td><td width="10%" data-th="單價" class="price"> <span class="table-col">$<span id="price' + item.ID + '">' + item.Price + '</span></span></td><th width="20%" data-th="數量" class=""><span class="table-col"><div><button class="" id="subtractpnum' + item.ID + '" onclick="subtractpnum(' + item.ID + ')"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIUlEQVR4nGNgGAWjYBSMApLBfyrhgbNgFIyCUTAKGDABAOkcI91xODUvAAAAAElFTkSuQmCC" style="height: 15px;"></button><input type="" id="input' + item.ID + '" class="quantity" value="' + item.Pnum + '" style="text-align: center; width: 100px;" disabled><button class="" id="addpnum' + item.ID + '" onclick="addpnum(' + item.ID + ')"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAANklEQVR4nGNgGGngPxSPWoAT/B8NIkLg/8gOov9UxvS3YOjHATHg/6gFhMD/0SAa8CBiGHQAAOITS7WQXzPpAAAAAElFTkSuQmCC" style="height: 15px;"></button></div></span></th><td width="10%" data-th="訂單金額" class="totalPrice" id="total' + item.ID + '"><span class="table-col"></span></td><td width="10%" data-th="狀態" class=""><span class="table-col"></span><button id="carlist_del_btn" data-username="' + item.Username + '" data-title="' + item.Title + '">X</button></td></tr>'
 
                 $("#carlist").append(strHtml);
 
@@ -618,7 +629,7 @@
 
         //delbtn
         function showdata_cardel(data) {
-            console.log(data);
+
             if (data.state) {
                 alert("刪除成功");
                 location.href = "shopcar.html";
@@ -627,14 +638,17 @@
             }
         }
 
-        var flag_username = true;
-        var flag_tel = true;
-        var flag_address = true;
-        var carpay;
+        var flag_username = false;
+        var flag_tel = false;
+        var flag_address = false;
+        var flag_pay = false;
+        var flag_delivery = false;
+
+        // var carpay
 
         //check uid
         function showdata_check_uid(data) {
-            console.log(data)
+
 
             if (data.state) {
                 $("#revise_btn").removeClass("d-none");
@@ -670,106 +684,183 @@
                     }
                 )
 
-
-                $("#tel").val(data.data[0].Tel);
-                $("#address").val(data.data[0].Address);
+                //監聽姓名是否有值
                 $("#username").val(data.data[0].Name);
+                if ($("#username").val() != "" && $("#username").val().length >= 3) {
+                    flag_username = true;
+                } else {
+                    $('#username').addClass('is-invalid');
+                }
+
+                //監聽電話是否有值
+                $("#tel").val(data.data[0].Tel);
+                if ($("#tel").val() != "" && $("#tel").val().length > 8) {
+                    flag_tel = true;
+                } else {
+                    $('#tel').addClass('is-invalid');
+                }
 
                 //基本資料監聽
                 // username 即時監聽
                 $("#username").bind("input propertychange", function () {
 
-                    if ($(this).val().length > 6) {
-                        $(this).removeClass("is-valid");
-                        $(this).addClass("is-invalid");
-                        flag_username = false;
-                    } else {
+                    if ($("#username").val().length >= 3 && $(this).val().length < 6) {
                         $(this).removeClass("is-invalid");
                         $(this).addClass("is-valid");
                         flag_username = true;
+                    } else {
+                        $(this).removeClass("is-valid");
+                        $(this).addClass("is-invalid");
+                        flag_username = false;
                     }
                 });
                 // tel 即時監聽
                 $("#tel").bind("input propertychange", function () {
-                    if ($(this).val().length > 10) {
-                        $(this).removeClass("is-valid");
-                        $(this).addClass("is-invalid");
-                        flag_tel = false
-                    } else {
-                        ;
+                    if ($("#tel").val().length > 8 && $(this).val().length < 15) {
                         $(this).removeClass("is-invalid");
                         $(this).addClass("is-valid");
                         flag_tel = true;
+                    } else {
+                        $(this).removeClass("is-valid");
+                        $(this).addClass("is-invalid");
+                        flag_tel = false
                     }
                 });
+
+
                 // shipping_btn按鈕監聽
-
-                $('input[type="radio"]').click(function () {
+                $('input[name="shipping_btn"]').click(function () {
                     var radio_val = $(this).val();
-
+                    flag_delivery = true;
                     if (radio_val == "超商") {
                         $('#shipping1').removeClass('d-none');
                         $('#shipping2').addClass('d-none');
                         // checkout_btn按鈕監聽
-                        $("#checkout_btn").click(function () {
-                            console.log(member);
-                            var carproductcheck
-                            var carproduct = [];
+                        // $("#checkout_btn").click(function () {
+                        //     console.log(member);
+                        //     var carproductcheck
+                        //     var carproduct = [];
 
-                            if (flag_username && flag_tel) {
-                                member.data.forEach(function (item) {
-                                    carproductcheck = "商品:" + item.Title + "\t數量:" + $("#input" + item.ID).val() + "個\t小計:$" + $('#total' + item.ID).text();
-                                    carproduct.push(carproductcheck);
-                                });
-                                carproduct = carproduct.join(",\n");
-                                console.log(carproduct);
+                        //     if (flag_username && flag_tel) {
+                        //         member.data.forEach(function (item) {
+                        //             carproductcheck = "商品:" + item.Title + "\t數量:" + $("#input" + item.ID).val() + "個\t小計:$" + $('#total' + item.ID).text();
+                        //             carproduct.push(carproductcheck);
+                        //         });
+                        //         carproduct = carproduct.join(",\n");
+                        //         console.log(carproduct);
 
-                                $("#showmsg").html("<h4  style='white-space: pre-line;'>訂單:\n<span id='carorder' style='white-space: pre-line;'>" + carproduct + "</span></h4><h4>總計:$<span id='cartotal'>" + $(totalAmount).text() + "</span></h4><h4>訂購人姓名:<span  id='carname' data-username='" + member.data[0].Username + "'>" + $("#username").val() + "</span></h4><h4>電話 :<span id='cartel'> " + $("#tel").val() + "</span></h4><h4>配送方式 :<span id='cardelivery'> " + $("input[type='radio']:checked").val() + "</span></h4><h4>地址:<span  id='caraddress'> </span></h4><h4>付款方式 :<span id='carorderpay'>" + carpay + "</span></h4><h4>備註:<span  id='carremark'>" + $('#remark').val() + "</span></h4>");
-                            } else {
-                                alert("請輸入完整!");
-                                $('#checkoutModal').modal("hide");
-                            }
+                        //         $("#showmsg").html("<h4  style='white-space: pre-line;'>訂單:\n<span id='carorder' style='white-space: pre-line;'>" + carproduct + "</span></h4><h4>總計:$<span id='cartotal'>" + $(totalAmount).text() + "</span></h4><h4>訂購人姓名:<span  id='carname' data-username='" + member.data[0].Username + "'>" + $("#username").val() + "</span></h4><h4>電話 :<span id='cartel'> " + $("#tel").val() + "</span></h4><h4>配送方式 :<span id='cardelivery'> " + $("input[type='radio']:checked").val() + "</span></h4><h4>地址:<span  id='caraddress'> </span></h4><h4>付款方式 :<span id='carorderpay'>" + carpay + "</span></h4><h4>備註:<span  id='carremark'>" + $('#remark').val() + "</span></h4>");
+                        //     } else {
+                        //         alert("請輸入完整!");
+                        //         $('#checkoutModal').modal("hide");
+                        //     }
 
-                        });
+                        // });
                     } else {
                         $('#shipping1').addClass('d-none');
                         $('#shipping2').removeClass('d-none');
 
+                        //監聽電話是否有值
+                        $("#address").val(data.data[0].Address);
+                        if ($("#address").val() != "" && $("#address").val().length > 4) {
+                            flag_tel = true;
+                        } else {
+                            $('#address').addClass('is-invalid');
+                        }
                         // address 即時監聽
                         $("#address").bind("input propertychange", function () {
-                            if ($(this).val().length > 50) {
-                                $(this).removeClass("is-valid");
-                                $(this).addClass("is-invalid");
-                                flag_address = false;
-                            } else {
+                            if ($(this).val().length > 4 && $(this).val().length < 50) {
                                 $(this).removeClass("is-invalid");
                                 $(this).addClass("is-valid");
                                 flag_address = true;
+                            } else {
+                                $(this).removeClass("is-valid");
+                                $(this).addClass("is-invalid");
+                                flag_address = false;
                             }
                         });
 
 
                         // checkout_btn按鈕監聽
-                        $("#checkout_btn").click(function () {
-                            console.log(member);
-                            var carproductcheck
-                            var carproduct = [];
+                        // $("#checkout_btn").click(function () {
+                        //     console.log(member);
+                        //     var carproductcheck
+                        //     var carproduct = [];
 
-                            if (flag_username && flag_tel && flag_address) {
-                                member.data.forEach(function (item) {
-                                    carproductcheck = "商品:" + item.Title + "\t數量:" + $("#input" + item.ID).val() + "個\t小計:$" + $('#total' + item.ID).text();
-                                    carproduct.push(carproductcheck);
-                                });
-                                carproduct = carproduct.join(",\n");
-                                console.log(carproduct);
+                        //     if (flag_username && flag_tel && flag_address) {
+                        //         member.data.forEach(function (item) {
+                        //             carproductcheck = "商品:" + item.Title + "\t數量:" + $("#input" + item.ID).val() + "個\t小計:$" + $('#total' + item.ID).text();
+                        //             carproduct.push(carproductcheck);
+                        //         });
+                        //         carproduct = carproduct.join(",\n");
+                        //         console.log(carproduct);
 
-                                $("#showmsg").html("<h4 style='white-space: pre-line;'>訂單:\n<span id='carorder' style='white-space: pre-line;'>" + carproduct + "</span></h4><h4>總計:$<span id='cartotal'>" + $(totalAmount).text() + "</span></h4><h4>訂購人姓名:<span  id='carname' data-username='" + member.data[0].Username + "'>" + $("#username").val() + "</span></h4><h4>電話 :<span id='cartel'> " + $("#tel").val() + "</span></h4><h4>配送方式 :<span id='cardelivery'> " + $("input[type='radio']:checked").val() + "</span></h4><h4>地址 :<span id='caraddress'>" + $("#select_city").val() + $("#select_region").val() + $("#address").val() + "</span> </h4><h4>付款方式 :<span id='carorderpay'>" + carpay + "</span></h4><h4>備註:<span  id='carremark'>" + $('#remark').val() + "</span></h4>");
+                        //         $("#showmsg").html("<h4 style='white-space: pre-line;'>訂單:\n<span id='carorder' style='white-space: pre-line;'>" + carproduct + "</span></h4><h4>總計:$<span id='cartotal'>" + $(totalAmount).text() + "</span></h4><h4>訂購人姓名:<span  id='carname' data-username='" + member.data[0].Username + "'>" + $("#username").val() + "</span></h4><h4>電話 :<span id='cartel'> " + $("#tel").val() + "</span></h4><h4>配送方式 :<span id='cardelivery'> " + $("input[type='radio']:checked").val() + "</span></h4><h4>地址 :<span id='caraddress'>" + $("#select_city").val() + $("#select_region").val() + $("#address").val() + "</span> </h4><h4>付款方式 :<span id='carorderpay'>" + carpay + "</span></h4><h4>備註:<span  id='carremark'>" + $('#remark').val() + "</span></h4>");
+                        //     } else {
+                        //         alert("請輸入完整!");
+                        //         $('#checkoutModal').modal("hide");
+                        //     }
+
+                        // });
+                    }
+                });
+                //監聽付款方式是否點選
+                $('input[name="btnradio"]').click(function () {
+                    flag_pay = true;
+                });
+
+                //監控訂單
+                $("#checkout_btn").click(function () {
+                    //個別監控
+                    if (flag_username && flag_tel) {
+                        if (flag_delivery) {
+                            if (flag_pay) {
+                                if ($("input[name='shipping_btn']:checked").val() == "超商") {
+                                    // 超商訂單
+                                    var carproductcheck
+                                    var carproduct = [];
+
+                                    member.data.forEach(function (item) {
+                                        carproductcheck = "商品:" + item.Title + "\t數量:" + $("#input" + item.ID).val() + "個\t小計:$" + $('#total' + item.ID).text();
+                                        carproduct.push(carproductcheck);
+                                    });
+                                    carproduct = carproduct.join(",\n");
+
+
+                                    $("#showmsg").html("<h4  style='white-space: pre-line;'>訂單:\n<span id='carorder' style='white-space: pre-line;'>" + carproduct + "</span></h4><h4>總計:$<span id='cartotal'>" + $(totalAmount).text() + "</span></h4><h4>訂購人姓名:<span  id='carname' data-username='" + member.data[0].Username + "'>" + $("#username").val() + "</span></h4><h4>電話 :<span id='cartel'> " + $("#tel").val() + "</span></h4><h4>配送方式 :<span id='cardelivery'> " + $("input[name='shipping_btn']:checked").val() + "</span></h4><h4>地址:<span  id='caraddress'> </span></h4><h4>付款方式 :<span id='carorderpay'>" + $("input[name='btnradio']:checked").val() + "</span></h4><h4>備註:<span  id='carremark'>" + $('#remark').val() + "</span></h4>");
+
+                                } else if ($("input[name='shipping_btn']:checked").val() == '宅配' && flag_address) {
+                                    //宅配訂單
+                                    var carproductcheck
+                                    var carproduct = [];
+
+
+                                    member.data.forEach(function (item) {
+                                        carproductcheck = "商品:" + item.Title + "\t數量:" + $("#input" + item.ID).val() + "個\t小計:$" + $('#total' + item.ID).text();
+                                        carproduct.push(carproductcheck);
+                                    });
+                                    carproduct = carproduct.join(",\n");
+
+
+                                    $("#showmsg").html("<h4 style='white-space: pre-line;'>訂單:\n<span id='carorder' style='white-space: pre-line;'>" + carproduct + "</span></h4><h4>總計:$<span id='cartotal'>" + $(totalAmount).text() + "</span></h4><h4>訂購人姓名:<span  id='carname' data-username='" + member.data[0].Username + "'>" + $("#username").val() + "</span></h4><h4>電話 :<span id='cartel'> " + $("#tel").val() + "</span></h4><h4>配送方式 :<span id='cardelivery'> " + $("input[name='shipping_btn']:checked").val() + "</span></h4><h4>地址 :<span id='caraddress'>" + $("#select_city").val() + $("#select_region").val() + $("#address").val() + "</span> </h4><h4>付款方式 :<span id='carorderpay'>" + $("input[name='btnradio']:checked").val() + "</span></h4><h4>備註:<span  id='carremark'>" + $('#remark').val() + "</span></h4>");
+
+                                } else {
+                                    alert("地址請填寫完整");
+                                    $('#checkoutModal').modal("hide");
+                                }
+
+
                             } else {
-                                alert("請輸入完整!");
+                                alert("付款方式未選擇");
                                 $('#checkoutModal').modal("hide");
                             }
-
-                        });
+                        } else {
+                            alert("請選擇配送方式");
+                            $('#checkoutModal').modal("hide");
+                        }
+                    } else {
+                        alert("請填寫完整");
+                        $('#checkoutModal').modal("hide");
                     }
                 });
 
@@ -811,19 +902,23 @@
 
         //數量增加
         function addpnum(data) {
-            console.log($("#input" + data).val());
-            //當數量大於1打開
-            $("#subtractpnum" + data).prop("disabled", false);
-            //抓取數量input的值
-            let val = parseInt($("#input" + data).val());
-            val = val + 1;
-            // 匯入新值
-            $("#input" + data).val(val);
+            if (parseInt($("#input" + data).val()) < 11) {
+                //當數量大於1打開
+                $("#subtractpnum" + data).prop("disabled", false);
+                //抓取數量input的值
+                let val = parseInt($("#input" + data).val());
+                val = val + 1;
+                // 匯入新值
+                $("#input" + data).val(val);
 
-            //商品金額計算
-            var price = parseInt($("#price" + data).text());
-            var total = val * price;
-            $("#total" + data).text(total);
+                //商品金額計算
+                var price = parseInt($("#price" + data).text());
+                var total = val * price;
+                $("#total" + data).text(total);
+            } else if (parseInt($("#input" + data).val()) == 10) {
+                // 當數量等於10關閉增加按鈕
+                $("#addpnum" + data).prop("disabled", true);
+            }
 
             //呼叫總金額計算(可以因加減的變化影響價格)
             updateTotalAmount();
@@ -832,7 +927,9 @@
         function subtractpnum(data) {
 
             if (parseInt($("#input" + data).val()) > 1) {
-
+                // 當數量小於10打開
+                $("#addpnum" + data).prop("disabled", false);
+                
                 let val = parseInt($("#input" + data).val());
                 val = val - 1;
                 $("#input" + data).val(val);
@@ -841,7 +938,7 @@
                 $("#total" + data).text(total);
 
             } else if (parseInt($("#input" + data).val()) == 1) {
-                //當數量等於1關閉按鈕
+                //當數量等於1關閉減少按鈕
                 $("#subtractpnum" + data).prop("disabled", true);
 
             }
@@ -860,15 +957,16 @@
         }
 
 
-        function pay(data) {
-            if (data == 1) {
-                carpay = "信用卡"
-                console.log("信用卡")
-            } else {
-                carpay = "貨到付款"
-                console.log("貨到付款")
-            }
-        }
+        // function pay(data) {
+        //     if (data == 1) {
+        //         carpay = "信用卡"
+        //         console.log("信用卡")
+        //     } else {
+        //         carpay = "貨到付款"
+        //         console.log("貨到付款")
+        //     }
+        // }
+
         // ----- selectCity ----- // 
         var allCity = [];           // 存儲所有縣市鄉鎮區資料
         var selectedCity = '';      // 已選取的縣市名稱
@@ -883,7 +981,7 @@
                 dataType: "json",
                 async: false,
                 success: function (data) {
-                    console.log(data);
+                 
                     allCity = data;
                 },
                 error: function () {
@@ -902,7 +1000,7 @@
 
             // 監聽#select_city選單資料是否有改變
             $("#select_city").change(function () {
-                console.log($(this).val());
+               
                 selectedCity = $(this).val();
 
                 // 依據所選取的縣市名稱 去尋找該縣市名稱的鄉鎮區資料
@@ -911,7 +1009,7 @@
                         selectedAreaList = item.AreaList;
                     }
                 });
-                console.log(selectedAreaList);
+               
 
                 //渲染鄉鎮區選單
                 $("#select_region").empty();
@@ -941,11 +1039,11 @@
         function doClick(data) {
             switch (data) {
                 case "all":
-                    console.log("all");
+                  
                     setCookie("list", "all", 7);
                     break;
                 default:
-                    console.log(data);
+                  
                     setCookie("list", data, 7);
                     break;
             }

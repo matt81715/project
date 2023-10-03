@@ -21,7 +21,7 @@ $(function () {
   }
   // 即時監聽username
   $("#username").bind("input propertychange", function () {
-    console.log($(this).val.length);
+   
     if ($(this).val().length > 4 && $(this).val().length < 9) {
       // 符合規定
 
@@ -47,7 +47,7 @@ $(function () {
 
   // 即時監聽password
   $("#password").bind("input propertychange", function () {
-    // console.log($(this).val.length);
+   
     if ($(this).val().length > 7 && $(this).val().length < 11) {
       // 符合規定
       $(this).removeClass("is-invalid");
@@ -63,7 +63,7 @@ $(function () {
 
   // 即時監聽name
   $("#name").bind("input propertychange", function () {
-    // console.log($(this).val.length);
+  
     if ($(this).val().length > 1) {
       // 符合規定
       $(this).removeClass("is-invalid");
@@ -80,7 +80,7 @@ $(function () {
 
   // 即時監聽tel
   $("#tel").bind("input propertychange", function () {
-    // console.log($(this).val.length);
+   
     if ($(this).val().length > 8) {
       // 符合規定
       $(this).removeClass("is-invalid");
@@ -96,7 +96,7 @@ $(function () {
 
   // 即時監聽email
   $("#email").bind("input propertychange", function () {
-    // console.log($(this).val.length);
+   
     if ($(this).val().length > 4) {
       // 符合規定
       $(this).removeClass("is-invalid");
@@ -159,7 +159,7 @@ $(function () {
 });
 
 function showdata_reg(data) {
-  console.log(data);
+ 
   if (data.state) {
     alert(data.message);
     $("#registerModal").modal("hide");
@@ -170,7 +170,7 @@ function showdata_reg(data) {
 }
 
 function showdata_check_uni(data) {
-  console.log(data);
+ 
   if (data.state) {
     // 此帳號不存在，可以使用
     $("#valid_message").text("此帳號不存在，可以使用");
@@ -231,7 +231,7 @@ function showdata_login(data) {
 }
 
 function showdata_check_uid(data) {
-  console.log(data);
+ 
   uid_username = data.data[0].Username;
   if (data.state) {
     // 驗證成功
@@ -302,11 +302,11 @@ function getCookie(cname) {
 function doClick(data) {
   switch (data) {
     case "all":
-      console.log("all");
+     
       setCookie("list", "all", 7);
       break;
     default:
-      console.log(data);
+     
       setCookie("list", data, 7);
       break;
   }

@@ -307,7 +307,7 @@
             // 即時監聽 title
             // var flag_title = false;
             $("#title").bind("input propertychange", function () {
-                // console.log($(this).val().length);
+           
                 if ($(this).val().length > 1 && $(this).val().length < 20) {
                     $(this).removeClass("is-invalid");
                     $(this).addClass("is-valid");
@@ -337,13 +337,7 @@
 
             // 即時監聽 img
             $("#fileupload").change(function () {
-                console.log("test");
-                console.log(fileupload);
-                console.log(fileupload.files[0]); // 出現圖片的詳細資料
-                console.log(fileupload.files[0].name);
-                console.log(fileupload.files[0].type);
-                console.log(fileupload.files[0].size);
-                console.log(URL.createObjectURL(fileupload.files[0]));
+               
                 // 生成可預覽圖片的網址 
 
                 // 只接受 jpeg / png 格式的圖片
@@ -367,7 +361,7 @@
 
         //uid fun
         function showdata_check_uid(data) {
-            console.log(data);
+           
             if (data.data[0].Username == "admin") {
 
                 // 顯示後台管理按鈕(可連結至control panel)
@@ -394,9 +388,7 @@
 
         //新增產品按鈕fun
         function uploadFile() {
-            console.log(fileupload);
-            console.log(fileupload.files[0]);
-
+          
             // 轉換格式 符合$_FILE需求 ； 利用 FormData()
             var formData = new FormData();
             formData.append('title', $("#title").val());//加入title值
@@ -405,10 +397,9 @@
             //加入ItemCategory值
 
             formData.append('file', fileupload.files[0]);
-            console.log(formData);
-
+          
             if (flag_title && flag_price) {
-                console.log("參數正確，可傳送至後端API");
+               
                 $.ajax({
                     type: "POST",
                     url: api_link + "api/product/product_add_postAndFile_api.php",
@@ -424,9 +415,8 @@
                     }
                 })
             } else {
-                console.log(flag_title);
-                console.log(flag_price);
-                console.log("參數錯誤，不可傳送至後端API");
+               
+                alert("參數錯誤，不可傳送至後端API");
             }
 
         }
@@ -434,7 +424,7 @@
 
 
         function showdata(data) {
-            console.log(data);
+           
             if (data.state) {
                 alert(data.message);
                 location.href = "Backstage_Add.html";
@@ -479,11 +469,11 @@
         function doClick(data) {
             switch (data) {
                 case "all":
-                    console.log("all");
+                 
                     setCookie("list", "all", 7);
                     break;
                 default:
-                    console.log(data);
+                   
                     setCookie("list", data, 7);
                     break;
             }

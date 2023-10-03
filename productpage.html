@@ -672,7 +672,7 @@
             //加入購物車按鈕
             $("#addcar").click(function () {
                 if (getCookie("uid01") !== "") {
-                    console.log(uid_username);
+                  
                     var p_title = $(this).data("productagetitle");
                     var p_price = $(this).data("price");
                     var p_pnum = $("#myInput").val();
@@ -702,7 +702,7 @@
             //立即購物按鈕
             $("#gotocar").click(function () {
                 if (getCookie("uid01") !== "") {
-                    console.log(uid_username);
+                  
                     var p_title = $(this).data("productagetitle");
                     var p_price = $(this).data("price");
                     var p_pnum = $("#myInput").val();
@@ -735,7 +735,7 @@
 
         //產品資料撈取
         function showdata_productage(data) {
-            console.log(data);
+           
             data.data.forEach(function (item) {
                 $("#productage").removeClass("d-none");
                 $("#productageImg").attr("src", api_link+'imgupload/' + item.Photo);
@@ -765,8 +765,7 @@
 
         //猜你喜歡(撈資料)
         function showdata_underProductage(data) {
-            console.log(data);
-            console.log(data.data.length);
+           
 
             $('#underProductage').empty();
             $("#underProductage").removeClass("d-none");
@@ -784,12 +783,12 @@
 
         //addcar
         function showdata_addcar(data) {
-            console.log(data);
-            alert(data.state + "加入購物車成功");
+           
+            alert("加入購物車成功");
         }
         //立即購買
         function showdata_gotocar(data) {
-            console.log(data);
+            
             location.href = "shopcar.html"
         }
         //給登入者狀態使用

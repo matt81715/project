@@ -344,7 +344,7 @@
 
         //驗證登入狀態
         function showdata_check_uid(data) {
-            console.log(data)
+           
             if (data.state) {
                 //驗證成功
                 if (data.data[0].Username == "admin") {
@@ -377,7 +377,7 @@
                 //監聽name
                 var name_flage = true;
                 $("#name").bind("input porpertychange", function () {
-                    console.log($(this).val().length);
+                 
                     if ($(this).val().length < 1) {
                         $(this).removeClass("is-valid");
                         $(this).addClass("is-invalid");
@@ -393,7 +393,7 @@
                 //監聽tel
                 var tel_flage = true;
                 $("#tel").bind("input porpertychange", function () {
-                    console.log($(this).val().length);
+               
                     if ($(this).val().length < 9) {
                         $(this).removeClass("is-valid");
                         $(this).addClass("is-invalid");
@@ -409,7 +409,7 @@
                 //監聽email
                 var email_flage = true;
                 $("#email").bind("input porpertychange", function () {
-                    console.log($(this).val().length);
+                
                     if ($(this).val().length == 0) {
                         $(this).removeClass("is-valid");
                         $(this).addClass("is-invalid");
@@ -475,7 +475,7 @@
 
         //更新按鈕
         function update(data) {
-            console.log(data);
+           
             $("#show").addClass("text-success");
             $("#show").text("修改成功");
         }
@@ -498,11 +498,11 @@
         function doClick(data) {
             switch (data) {
                 case "all":
-                    console.log("all");
+                  
                     setCookie("list", "all", 7);
                     break;
                 default:
-                    console.log(data);
+                  
                     setCookie("list", data, 7);
                     break;
             }

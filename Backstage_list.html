@@ -394,7 +394,7 @@
 
             //modal_update_btn按鈕監聽
             $("#modal_update_btn").click(function () {
-                console.log(uid);
+              
                 // 轉換格式 符合$_FILE需求 ； 利用 FormData()
                 var formData = new FormData();
                 formData.append('id', uid);//加入title值
@@ -404,10 +404,10 @@
                 //加入ItemCategory值
 
                 formData.append('file', photo.files[0]);
-                console.log(formData);
+              
 
 
-                console.log("參數正確，可傳送至後端API");
+              
                 $.ajax({
                     type: "POST",
                     url: api_link + "api/product/backstage_update_postAndFile_api.php",
@@ -427,13 +427,7 @@
 
 
             $("#photo").change(function () {
-                console.log("test");
-                console.log(photo);//顯示標籤
-                console.log(photo.files[0]);//檔案資料結構
-                console.log(photo.files[0].name);//上傳資料名
-                console.log(photo.files[0].type);//上傳資料類型
-                console.log(photo.files[0].size);//上傳資料的size
-                console.log(URL.createObjectURL(photo.files[0]));//
+               
 
                 //判斷檔案格式為圖片檔
                 if (photo.files[0].type == "image/png" || photo.files[0].type == "image/jpeg") {
@@ -454,7 +448,7 @@
 
         //uid fun
         function showdata_check_uid(data) {
-            console.log(data);
+           
             if (data.state) {
                 //驗證成功
                 if (data.data[0].Username == "admin") {
@@ -496,7 +490,7 @@
 
         //列表fun
         function showdata_list(data) {
-            console.log(data);
+            
             if (data.state) {
                 $("#mem_table").empty();
                 data.data.forEach(function (item) {
@@ -544,12 +538,12 @@
                 if ($(this).is(':checked')) {
                     active = 'Y';
                     state_id = $(this).data('id');
-                    console.log(active + $(this).data('id'));
+                   
                     $(this).next().text("顯示");
                 } else {
                     active = 'N';
                     state_id = $(this).data('id');
-                    console.log(active + $(this).data('id'));
+                   
                     $(this).next().text("不顯示");
                 }
 
@@ -583,7 +577,7 @@
 
             //delete_btn刪除按鈕監聽
             $("#mem_table #delete_btn").click(function () {
-                console.log($(this).data("id"));
+             
                 //二次確認
                 if (confirm("確認刪除" + $(this).data("title") + "?")) {
                     //傳遞後端control_panel_d_mem_api執行刪除
@@ -607,7 +601,7 @@
 
         //fun狀態更新
         function showdata_active_status(data) {
-            console.log(data);
+            // console.log(data);
         }
 
         //刪除列表fun
@@ -622,7 +616,7 @@
 
         //update_btn
         function showdataUpdate(data) {
-            console.log(data);
+       
             if (data.state) {
                 // alert(data.message);
                 location.href = "Backstage_list.html";
@@ -669,11 +663,11 @@
         function doClick(data) {
             switch (data) {
                 case "all":
-                    console.log("all");
+                   
                     setCookie("list", "all", 7);
                     break;
                 default:
-                    console.log(data);
+                  
                     setCookie("list", data, 7);
                     break;
             }

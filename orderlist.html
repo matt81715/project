@@ -389,20 +389,20 @@
         function doClick(data) {
             switch (data) {
                 case "all":
-                    console.log("all");
+                  
                     setCookie("list", "all", 7);
                     break;
                 default:
-                    console.log(data);
+                   
                     setCookie("list", data, 7);
                     break;
             }
         }
         //check uid
         function showdata_check_uid(data) {
-            console.log(data);
+           
             uid_username = data.data[0].Username;
-            console.log(uid_username);
+            // console.log(uid_username);
             if (data.state) {
                 //驗證成功
                 $("#revise_btn").removeClass("d-none");
@@ -428,7 +428,7 @@
 
 
                 // VUE
-                console.log(uid_username);
+                // console.log(uid_username);
                 const App = {
                     data() {
                         return {
@@ -447,7 +447,7 @@
                             },
                             dataType: 'json',
                             success: function (data) {
-                                console.log(data.data);
+                                // console.log(data.data);
                                 vm.orderdata = data.data;
 
                                 // 每次更新後，使用取得使用者這支方法

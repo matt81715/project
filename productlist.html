@@ -573,24 +573,10 @@
 
         });//end fun
 
-        // //列表選擇網址fun
-        // function doClick(data) {
-        //     switch (data) {
-        //         case "all":
-        //             console.log('all');
-        //             setCookie('list', 'all', 7);
-        //             break;
-        //         default:
-        //             console.log(data);
-        //             setCookie('list', data, 7);
-        //             break;
-        //     }
-        // }
-
+        
         //產品資料撈取
         function showdata_list(data) {
-            console.log(data);
-
+           
             $('#list').empty();
             $('#list').removeClass("d-none");
             switch (getCookie('list')) {
@@ -636,14 +622,14 @@
             });
 
             $("#list #productage").click(function () {
-                console.log($(this).data("id"));
+              
                 setCookie('productage', $(this).data("id"), 7);
             });
 
             //加入購物車按鈕
             $("#list #addcar").click(function () {
                 if (getCookie("uid01") !== "") {
-                    console.log(uid_username);
+                  
                     var p_title = $(this).data("productagetitle");
                     var p_price = $(this).data("price");
                     var p_photo = $(this).data("photo");
@@ -673,7 +659,7 @@
 
         //addcar
         function showdata_addcar(data) {
-            console.log(data);
+          
             alert(data.state + "加入購物車成功");
         }
 
