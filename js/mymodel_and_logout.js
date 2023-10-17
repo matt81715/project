@@ -1,5 +1,6 @@
 var flag_username = false;
 var flag_password = false;
+var flag_password2 = false;
 var flag_name = false;
 var flag_tel = false;
 var flag_email = false;
@@ -21,7 +22,7 @@ $(function () {
   }
   // 即時監聽username
   $("#username").bind("input propertychange", function () {
-   
+
     if ($(this).val().length > 4 && $(this).val().length < 9) {
       // 符合規定
 
@@ -38,7 +39,6 @@ $(function () {
       });
     } else {
       // 不符合規定
-      $("#invalid_message").text("此帳號字數不符合規定");
       $(this).removeClass("is-valid");
       $(this).addClass("is-invalid");
       flag_username = false;
@@ -47,7 +47,7 @@ $(function () {
 
   // 即時監聽password
   $("#password").bind("input propertychange", function () {
-   
+
     if ($(this).val().length > 7 && $(this).val().length < 11) {
       // 符合規定
       $(this).removeClass("is-invalid");
@@ -60,18 +60,30 @@ $(function () {
       flag_password = false;
     }
   });
+  //重新輸入密碼
+  $("#password2").bind("input propertychange", function () {
 
+    if ($(this).val() == $("#password").val()) {
+      // 符合規定
+      $(this).removeClass("is-invalid");
+      $(this).addClass("is-valid");
+      flag_password2 = true;
+    } else {
+      // 不符合規定
+      $(this).removeClass("is-valid");
+      $(this).addClass("is-invalid");
+      flag_password2 = false;
+    }
+  });
   // 即時監聽name
   $("#name").bind("input propertychange", function () {
-  
-    if ($(this).val().length > 1) {
+
+    if ($(this).val().length > 1 && $(this).val().length < 8) {
       // 符合規定
       $(this).removeClass("is-invalid");
       $(this).addClass("is-valid");
       flag_name = true;
     } else {
-      // 不符合規定
-      $("#invalid_message").text("此帳號字數不符合規定");
       $(this).removeClass("is-valid");
       $(this).addClass("is-invalid");
       flag_name = false;
@@ -80,8 +92,8 @@ $(function () {
 
   // 即時監聽tel
   $("#tel").bind("input propertychange", function () {
-   
-    if ($(this).val().length > 8) {
+
+    if ($(this).val().length > 8 && $(this).val().length < 32) {
       // 符合規定
       $(this).removeClass("is-invalid");
       $(this).addClass("is-valid");
@@ -96,8 +108,7 @@ $(function () {
 
   // 即時監聽email
   $("#email").bind("input propertychange", function () {
-   
-    if ($(this).val().length > 4) {
+    if ($(this).val().length > 4 && $(this).val().length < 32) {
       // 符合規定
       $(this).removeClass("is-invalid");
       $(this).addClass("is-valid");
@@ -109,10 +120,30 @@ $(function () {
       flag_email = false;
     }
   });
+  //遵守會員勾選
+  var flag_registerTick = false;
+  $("#registerTick").change(function () {
+    if ($(this).is(':checked')) {
+      flag_registerTick = true;
+      $(this).addClass("is-valid");
+      $(this).removeClass("is-invalid");
+    } else {
+      flag_registerTick = false;
+      $(this).addClass("is-invalid");
+      $(this).removeClass("is-valid");
+    }
+  });
 
   // 按鈕監聽reg_btn
   $("#registerModal_btn").click(function () {
-    if (flag_username && flag_password) {
+    if (flag_username
+      && flag_password
+      && flag_password2
+      && flag_name
+      && flag_tel
+      && flag_email
+      && $("input[name='gender']:checked").length > 0
+    ) {
       $.ajax({
         type: "POST",
         url: api_link + "api/member/reg_api.php",
@@ -130,9 +161,20 @@ $(function () {
           alert("註冊錯誤-reg_api.php");
         },
       });
-    } else {
-      //欄位輸入錯誤
-      alert("欄位輸入錯誤, 請修正!");
+    } else if (!flag_registerTick) {
+      alert("尚未勾選遵守會員守則");
+    } else if (!flag_username) {
+      alert("會員帳號錯誤");
+    } else if (!flag_password && !flag_password2) {
+      alert("會員密碼錯誤");
+    } else if (!flag_name) {
+      alert("會員姓名錯誤");
+    } else if (!flag_tel) {
+      alert("會員電話錯誤");
+    } else if (!flag_email) {
+      alert("會員email錯誤");
+    } else if ($("input[name='gender']:checked").length == 0) {
+      alert("請確認姓別選取");
     }
   });
   // 按鈕監聽login_btn
@@ -159,7 +201,7 @@ $(function () {
 });
 
 function showdata_reg(data) {
- 
+
   if (data.state) {
     alert(data.message);
     $("#registerModal").modal("hide");
@@ -170,7 +212,7 @@ function showdata_reg(data) {
 }
 
 function showdata_check_uni(data) {
- 
+
   if (data.state) {
     // 此帳號不存在，可以使用
     $("#valid_message").text("此帳號不存在，可以使用");
@@ -231,7 +273,7 @@ function showdata_login(data) {
 }
 
 function showdata_check_uid(data) {
- 
+
   uid_username = data.data[0].Username;
   if (data.state) {
     // 驗證成功
@@ -302,11 +344,11 @@ function getCookie(cname) {
 function doClick(data) {
   switch (data) {
     case "all":
-     
+
       setCookie("list", "all", 7);
       break;
     default:
-     
+
       setCookie("list", data, 7);
       break;
   }

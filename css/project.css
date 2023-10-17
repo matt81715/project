@@ -29,6 +29,21 @@ a {
     background-image: url(../images/background/—Pngtree—clouds_5632807.png), url(../images/background/—Pngtree—clouds_5632807.png);
     background-position: left center, right bottom;
 } */
+.cneterline {
+    position: relative;
+}
+
+.cneterline::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    /* background-color: var(--mycolor21); */
+    background-image: linear-gradient(180deg, rgba(32, 46, 231, 0.2), rgba(16, 189, 180, 0.5));
+    left: 50%;
+    transform: translateX(-50%);
+}
 
 .body-loginModal {
     background-color: #4c9ed5;
